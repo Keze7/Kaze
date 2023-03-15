@@ -1,5 +1,4 @@
 [filter_local]
-# 去除广告
 //*.googlesyndication.com/*
 //*.google-analytics.com/*
 //*.doubleclick.net/*
