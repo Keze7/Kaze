@@ -1,8 +1,6 @@
 [rewrite_local]
 #滴滴打车主页
 ^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v1\/core url reject-dict
-#U净
-^https:\/\/adsoss\.zhinengxiyifang\.cn\/ads url reject ^https?:\/\/ads\.zhinengxiyifang\.cn\/api\/v1\.1\/ads\/* url reject-200
 
 # 快狗打车搬家 微信小程序净化
 
@@ -111,6 +109,6 @@
 hostname = dock.tenchii.com, webchatapp.fcbox.com,dsp.fcbox.com, api.hongyibo.com.cn,res.hongyibo.com.cn, customer-app.sto.cn,sto-customer-app.oss-cn-shanghai.aliyuncs.co,
 supplier-api.imdada.cn, common.diditaxi.com.cn, api.ulife.group, app-gw.csdn.net, api.sodalife.xyz, app.chinahxzq.com.cn, mobile-api.imlaidian.com, wxproj.seeyouyima.com, suyun-user.daojia.com
 ,  qapi.huolala.cn, appuser-static.huolala.cn, apis.alenable.com, hdgateway.zto.com, wxs-weixin.sd.zhumanggroup.com, s.jiediankeji.com, smarket.dian.so,file.dian.so, aag.enmonster.com, ad.xiaotucc.com, mapi.xiaotucc.com
-, adsoss.zhinengxiyifang.cn, api-marketing.zhinengxiyifang.cn,ads.zhinengxiyifang.cn, conf.diditaxi.com.cn 
+, ads.zhinengxiyifang.cn, conf.diditaxi.com.cn 
 
 
