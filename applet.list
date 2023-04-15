@@ -1,5 +1,5 @@
 [rewrite_local]
-#滴滴打车主页
+#滴滴打车
 ^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v1\/core url reject-dict
 
 # 快狗打车搬家 微信小程序净化
