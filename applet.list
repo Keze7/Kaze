@@ -1,6 +1,4 @@
-[rewrite_local]
-#竹马
-^http:\/\/online-api\.zhongheschool\.com\/api\/module\/show\/getLoading url rejectl
+^http:\/\/online-api\.zhongheschool\.com\/api\/module\/show\/getLoading url reject
 
 hostname = online-api.zhongheschool.com
 
