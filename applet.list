@@ -1,4 +1,10 @@
 [rewrite_local]
+# 快狗打车搬家 微信小程序净化
+
+^https:\/\/suyun-guest\.daojia\.com\/api\/kuaigou\/banjia\/review url reject-dict
+# 美柚 微信小程序净化
+
+^https:\/\/wxproj\.seeyouyima\.com\/data\/today_tips url reject-dict
 #上海地铁
 ^https:\/\/dock\.tenchii\.com\/DockCard\/api\/mini\/card\/list url reject-dict
 #蜂巢
@@ -57,9 +63,47 @@
 # 来电 小程序净化
 
 ^https:\/\/mobile-api\.imlaidian\.com\/api\/args url reject-dict
+# 货拉拉 微信小程序净化
 
+^https:\/\/qapi\.huolala\.cn\/ads url reject-dict
 
+^https:\/\/appuser-static\.huolala\.cn\/imgs url reject-dict
+
+^https:\/\/qapi\.huolala\.cn\/home_new_user url reject-dict
+
+^https:\/\/qapi\.huolala\.cn\/get_service_list url reject-dict
+# 广州地铁乘车码 微信小程序净化
+
+^https:\/\/apis\.alenable\.com\/mall\/v1\/api\/mall\/skin\/user\/get url reject-dict
+
+^https:\/\/apis\.alenable\.com\/ycx\/v1\/api\/adPut url reject-dict
+#中通豆豆分享
+
+^https:\/\/hdgateway\.zto\.com\/getApolloConfig url reject-dict
+
+^https:\/\/hdgateway\.zto\.com\/track url reject-dict
+
+^https:\/\/hdgateway\.zto\.com\/getAdInfo url reject-dict
+
+^https:\/\/hdgateway\.zto\.com\/listJumperShow url reject-dict
+# 搜电充电 微信小程序
+
+^https:\/\/wxs-weixin\.sd\.zhumanggroup\.com\/api\/v2\/ad url reject-dict
+# 街电 微信小程序
+
+^https:\/\/s\.jiediankeji\.com\/adv url reject-dict
+# 小电充电 微信小程序
+
+^https:\/\/smarket\.dian\.so url reject-dict
+
+^https:\/\/file\.dian\.so\/c\/leto url reject-dict
+# 怪兽充电 微信小程序
+
+^https:\/\/aag\.enmonster\.com\/apa\/index\/advert\/skin url reject
+#小兔快充
+^https:\/\/ad\.xiaotucc\.com\/advert url reject ^https:\/\/mapi\.xiaotucc\.com\/(mall\/main|main_page\/index\/getActivity) url script-response-body https://raw.githubusercontent.com/jizhi0520/QX/main/xiaotucc.js
 
 hostname = dock.tenchii.com, webchatapp.fcbox.com,dsp.fcbox.com, api.hongyibo.com.cn,res.hongyibo.com.cn, customer-app.sto.cn,sto-customer-app.oss-cn-shanghai.aliyuncs.co,
-supplier-api.imdada.cn, common.diditaxi.com.cn, api.ulife.group, app-gw.csdn.net, api.sodalife.xyz, app.chinahxzq.com.cn, mobile-api.imlaidian.com
-
+supplier-api.imdada.cn, common.diditaxi.com.cn, api.ulife.group, app-gw.csdn.net, api.sodalife.xyz, app.chinahxzq.com.cn, mobile-api.imlaidian.com, wxproj.seeyouyima.com, suyun-user.daojia.com
+,  qapi.huolala.cn, appuser-static.huolala.cn, apis.alenable.com, hdgateway.zto.com, wxs-weixin.sd.zhumanggroup.com, s.jiediankeji.com, smarket.dian.so,file.dian.so, aag.enmonster.com, ad.xiaotucc.com, mapi.xiaotucc.com
+, 
