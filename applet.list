@@ -1,0 +1,6 @@
+[rewrite_local]
+#竹马
+^http:\/\/online-api\.zhongheschool\.com\/api\/module\/show\/getLoading url rejectl
+[mitm]
+online-api.zhongheschool.com
+
