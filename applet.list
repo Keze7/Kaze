@@ -1,5 +1,5 @@
 [rewrite_local]
-^http:\/\/online-api\.zhongheschool\.com\/api\/module\/show\/getLoading  url reject
+^https:\/\/dock\.tenchii\.com\/DockCard\/api\/mini\/card\/list url reject-dict
 
-hostname = online-api.zhongheschool.com
+hostname = dock.tenchii.com
 
