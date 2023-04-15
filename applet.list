@@ -1,4 +1,9 @@
 [rewrite_local]
+# EMS 微信小程序净化
+由TEXAS和豆豆提供
+
+^https:\/\/ump\.ems\.com\.cn\/new-generation-extend\/redis\/pageInfoByChannel url script-response-body https://raw.githubusercontent.com/jizhi0520/QX/main/ems.js
+
 #滴滴打车
 ^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v1\/core url reject-dict
 
@@ -103,11 +108,18 @@
 # 怪兽充电 微信小程序
 
 ^https:\/\/aag\.enmonster\.com\/apa\/index\/advert\/skin url reject
+# 哈啰 微信小程序首页弹窗屏蔽
+
+^https:\/\/api\.hellobike\.com\/api\?adx url reject-dict
+# 微快递 微信小程序净化
+
+^https:\/\/api\.kuaidihelp\.com\/g_order_core\/v2\/mina\/User\/getBannerList url reject-dict
+
 
 
 hostname = dock.tenchii.com, webchatapp.fcbox.com,dsp.fcbox.com, api.hongyibo.com.cn,res.hongyibo.com.cn, customer-app.sto.cn,sto-customer-app.oss-cn-shanghai.aliyuncs.co,
 supplier-api.imdada.cn, common.diditaxi.com.cn, api.ulife.group, app-gw.csdn.net, api.sodalife.xyz, app.chinahxzq.com.cn, mobile-api.imlaidian.com, wxproj.seeyouyima.com, suyun-user.daojia.com
 ,  qapi.huolala.cn, appuser-static.huolala.cn, apis.alenable.com, hdgateway.zto.com, wxs-weixin.sd.zhumanggroup.com, s.jiediankeji.com, smarket.dian.so,file.dian.so, aag.enmonster.com, 
-ads.zhinengxiyifang.cn, conf.diditaxi.com.cn 
+ads.zhinengxiyifang.cn, conf.diditaxi.com.cn, ump.ems.com.cn, api.hellobike.coming, api.kuaidihelp.com
 
 
