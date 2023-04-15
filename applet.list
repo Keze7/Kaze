@@ -1,6 +1,10 @@
 ##本期所有内容来源于https://t.me/quguanggao群组，所有内容来源于大佬(是豆豆呀）分享
 
 [rewrite_local]
+# 极兔快递 微信小程序净化
+
+^https:\/\/applets\.jtexpress\.com\.cn url reject-dict
+
 # EMS 微信小程序净化
 由TEXAS和豆豆提供
 
@@ -122,6 +126,6 @@
 hostname = dock.tenchii.com, webchatapp.fcbox.com,dsp.fcbox.com, api.hongyibo.com.cn,res.hongyibo.com.cn, customer-app.sto.cn,sto-customer-app.oss-cn-shanghai.aliyuncs.co,
 supplier-api.imdada.cn, common.diditaxi.com.cn, api.ulife.group, app-gw.csdn.net, api.sodalife.xyz, app.chinahxzq.com.cn, mobile-api.imlaidian.com, wxproj.seeyouyima.com, suyun-user.daojia.com
 ,  qapi.huolala.cn, appuser-static.huolala.cn, apis.alenable.com, hdgateway.zto.com, wxs-weixin.sd.zhumanggroup.com, s.jiediankeji.com, smarket.dian.so,file.dian.so, aag.enmonster.com, 
-ads.zhinengxiyifang.cn, conf.diditaxi.com.cn, ump.ems.com.cn, api.hellobike.coming, api.kuaidihelp.com
+ads.zhinengxiyifang.cn, conf.diditaxi.com.cn, ump.ems.com.cn, api.hellobike.coming, api.kuaidihelp.com, applets.jtexpress.com.cn
 
 
