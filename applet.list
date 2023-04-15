@@ -2,7 +2,6 @@
 #本期作者:@XB_996
 [rewrite_local]
 #石家庄公交乘车码 微信小程序净化
-
 ^https:\/\/wechat-api\.i-xiaoma\.com\.cn\/app\/v1\/bus\/wechat\/content url reject-dict
 
 #曹操出行 微信小程序净化
