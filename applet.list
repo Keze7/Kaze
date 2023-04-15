@@ -1,6 +1,10 @@
 ##本期所有内容来源于https://t.me/quguanggao群组，所有内容来源于大佬(是豆豆呀）分享
 #本期作者:@XB_996
 [rewrite_local]
+#石家庄公交乘车码 微信小程序净化
+
+^https:\/\/wechat-api\.i-xiaoma\.com\.cn\/app\/v1\/bus\/wechat\/content url reject-dict
+
 #曹操出行 微信小程序净化
 
 ^https:\/\/minicap\.caocaokeji\.cn\/advert-bss\/pullAdvert url reject-dict
@@ -144,6 +148,6 @@ hostname = dock.tenchii.com, webchatapp.fcbox.com,dsp.fcbox.com, api.hongyibo.co
 supplier-api.imdada.cn, common.diditaxi.com.cn, api.ulife.group, app-gw.csdn.net, api.sodalife.xyz, app.chinahxzq.com.cn, mobile-api.imlaidian.com, wxproj.seeyouyima.com, suyun-user.daojia.com
 ,  qapi.huolala.cn, appuser-static.huolala.cn, apis.alenable.com, hdgateway.zto.com, wxs-weixin.sd.zhumanggroup.com, s.jiediankeji.com, smarket.dian.so,file.dian.so, aag.enmonster.com, 
 ads.zhinengxiyifang.cn, conf.diditaxi.com.cn, ump.ems.com.cn, api.hellobike.coming, api.kuaidihelp.com, applets.jtexpress.com.cn, apiproxy.zuche.com, miniprogram.ishansong.com,ads.ishansong.com
-, minicap.caocaokeji.cn
+, minicap.caocaokeji.cn, wechat-api.i-xiaoma.com.cn
 
 
