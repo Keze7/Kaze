@@ -2,4 +2,5 @@
 #10086开屏广告  he.10086.cn
 ^http:\/\/he\.10086\.cn\/app\/touch_spot_images url reject-dict
 
+[MITM]
 hostname = he.10086.cn
