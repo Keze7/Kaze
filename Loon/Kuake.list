@@ -1,0 +1,28 @@
+#!name = 夸克
+
+#!desc = 不完美解锁
+
+#!openUrl = 
+
+#!author = Keze7
+
+#!homepage = https://github.com/Keze7/Kaze/tree/main/Loon
+
+#!icon =https://github.com/Keze7/Kaze/raw/main/Loon/Kuake.PNG
+
+[Script]
+
+http-response ^https?:\/\/drive.*\.quark\.cn\/.+\/clouddrive\/(member.+|distribute\/detail.+|capacity\/growth\/info) script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/kuake.js, requires-body=true, tag=kuake
+
+[MITM]
+
+hostname = drive*.quark.cn
+
+[Script]
+
+http-response ^https?:\/\/drive.*\.quark\.cn\/.+\/clouddrive\/(member.+|distribute\/detail.+|capacity\/growth\/info) script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/kuake.js, requires-body=true, tag=kuake
+
+[MITM]
+
+hostname = drive*.quark.cn
+
