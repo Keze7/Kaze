@@ -1,3 +1,6 @@
+#!name=WPS解锁
+#!desc=点亮超级会员图标，解锁超级会员皮肤解锁部分超会权限，解锁稻壳模版下载，更多功能自行探索
+#!icon=https://raw.githubusercontent.com/Keze7/Kaze/main/Loon/E644FFEC-74F3-4B40-BFD4-CB6FB168E515.png
 [Script]
 http-response ^https?:\/\/(account|drive|vas|userinfo.docer)\.wps\.cn\/(.*api\/(v3\/(mine\/vips|spaces)|users\/\d+\/overview|v1\/list_purchase_info)|user\/v1\/vip_dl_times) script-path=https://raw.githubusercontent.com/yqc007/QuantumultX/master/WPSuperVIPuserCrack.js, requires-body=true, tag=WPSuperVIPuserCrack
 WPSuperVIPowerCrack
