@@ -1,0 +1,13 @@
+#!name=网易云解锁
+
+#!desc=解锁试听
+
+#!icon= https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netease_Music.png
+
+[Script]
+
+http-request ^http[s]?:\/\/.+music.+(player\/url|playlist|entrance|\/eapi\/search\/).*$ script-path=https://raw.githubusercontent.com/WeiRen0/Scripts/main/wyun.js, requires-body=false, tag=wyun
+
+[MITM]
+
+hostname = *.music.163.com
