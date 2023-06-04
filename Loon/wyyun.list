@@ -1,8 +1,14 @@
-#!name=网易云解锁
+#!name = 网易云解锁
 
-#!desc=解锁试听
+#!desc = 网易云解锁试听
 
-#!icon= https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netease_Music.png
+#!openUrl = 
+
+#!author = Keze7
+
+#!homepage = https://github.com/Keze7/Kaze/tree/main/Loon
+
+#!icon = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netease_Music.png
 
 [Script]
 
