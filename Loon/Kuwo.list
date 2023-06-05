@@ -1,0 +1,20 @@
+#!name = 酷我音乐
+
+#!desc = ➡️ 已解锁➡️ 酷我音乐纯净版
+
+#!openUrl = 
+
+#!author = Keze7
+
+#!homepage = https://github.com/Keze7/Kaze/tree/main/Loon
+
+#!icon =https://github.com/Keze7/Kaze/raw/main/Loon/Kuwo.PNG
+
+[Script]
+
+http-response ^http[s]?:\/\/.*kuwo.*(/vip/enc/user/vip|/a.p|/vip/v2/user/vip|/vip/v2/sysinfo|/vip/v2/theme|AdService/kaiping/|/music.pay|player/getStyleListByModel).*$ script-path=https://raw.githubusercontent.com/WeiRen0/Scripts/main/kw.js, requires-body=true, tag=kw
+
+[MITM]
+
+hostname = *kuwo*
+
