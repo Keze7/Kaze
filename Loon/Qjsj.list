@@ -1,0 +1,19 @@
+#!name = 千亦世界
+
+#!desc = ➡️ 已解锁➡️ 永久至尊会员
+
+#!openUrl = 
+
+#!author = Keze7
+
+#!homepage = https://github.com/Keze7/Kaze/tree/main/Loon
+
+#!icon =
+
+[Script]
+
+http-response ^http[s]?:\/\/app\.thwlqy\.com\/login\/login\/veifys\.html script-path=https://raw.githubusercontent.com/WeiRen0/Scripts/main/qysj.js, requires-body=true, tag=qysj
+
+[MITM]
+
+hostname = app.thwlqy.com
