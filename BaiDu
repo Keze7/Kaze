@@ -1,7 +1,0 @@
-[rewrite_local]
-##百度防跳转
-hostname = boxer.baidu.com
-^https?:\/\/boxer\.baidu\.com\/scheme\?scheme ^GET url-and-header script-response-header https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/baidu/baiduNoRedirect.js
-
-[MITM]
-hostname = boxer.baidu.com
