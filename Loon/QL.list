@@ -1,0 +1,18 @@
+#!name = 趣铃🔔
+#!desc = **解锁永久会员
+解锁付费下载歌曲
+解锁全局广告**
+
+#!openUrl = 
+#!author = Keze7
+#!homepage = https://github.com/Keze7/Kaze/tree/main/Loon
+#!icon = https://github.com/Keze7/Kaze/raw/main/Loon/Quling.PNG
+
+[Script]
+http-response ^https:\/\/apiquling\.hengqifeng\.com\/(login\/gettoken|user\/getUserByToken|advertisement\/getAdvertisementStatus) script-path=https://raw.githubusercontent.com/gjwj666/qx/main/quling.js, requires-body=true, tag=quling
+quling
+http-response ^https?:\/\/.*\/userandaudio\/payAudio script-path=https://raw.githubusercontent.com/gjwj666/qx/main/quling.js, requires-body=true, tag=quling
+quling
+
+[MITM]
+hostname = apiquling.hengqifeng.com
