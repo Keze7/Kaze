@@ -1,4 +1,7 @@
-^https:\/\/gw\.aoscdn\.com\/base\/vip\/client url script-response-body https://raw.githubusercontent.com/Keze7/Kaze/main/Qx/Xzj.js
+[rewrite_local]
+
+^https:\/\/gw\.aoscdn\.com\/base\/vip\/client url script-response-body 
+https://github.com/Keze7/Kaze/raw/main/Qx/Xzj.js
 
 [mitm]
 
