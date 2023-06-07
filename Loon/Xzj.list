@@ -2,8 +2,7 @@
 
 http-response
 
-^http[s]?:\/\/gw\.aoscdn\.com\/base\/vip\/client script-path=https://github.com/Keze7/Kaze/raw/main/Qx/Xzj.js
+^http[s]?:\/\/gw\.aoscdn\.com\/base\/vip\/client script-path=https://github.com/Keze7/Kaze/raw/main/Qx/Xzj.js, , requires-body=Xzj, tag=Xzj
 
 [mitm]
-
 hostname = gw.aoscdn.com
