@@ -1,6 +1,6 @@
 [rewrite_local]
 
-^http[s]?:\/\/awvp\.aoscdn\.com\/base\/vip\/v2  url script-response-body https://github.com/Keze7/Kaze/raw/main/QX/Qs.js 
+^http[s]?:\/\/awvp\.aoscdn\.com\/base\/vip\/v2  url script-response-body https://github.com/Keze7/Kaze/raw/main/QX/jj.js 
 
 [mitm]
 
