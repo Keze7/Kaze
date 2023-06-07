@@ -10,48 +10,30 @@ hostname = gw.aoscdn.com
 
 */
 
-var body = $response.body;
-
-var url = $request.url;
-
-var obj = JSON.parse(body);
-
-const Kaze = '/authorizations';
-
-if (url.indexOf(Kaze) != -1) {
-
-    obj.data.candy_expired_at = 99999999;
-
-obj.data.candy = 8888;
-
-obj.data.device_id = 123456789;
-
-obj.data.vip_special = 1;
-
-obj.data.limit = 1;
-
-obj.data.remain_days = 356;
-
-obj.data.expire_time = "2099-12-31 23:59:59"
-
-obj.data.is_lifetime = 1;
-
-obj.data.expired_at = 0;
-
-obj.data.has_buy_extend = 1;
-
-obj.data.allowed_device_count = 3;
-
-obj.data.has_present = 1;
-
-obj.data.durations = 10;
-
-obj.data.is_activated = 1;
-
-obj.data.is_tried = 1;
-
-    body = JSON.stringify(obj);
-
-}
-
-$done({body});
+let bodyJson = JSON.parse($response.body);
+bodyJson.data = {
+  "candy": 8888,
+  "candy_expired_at": 9999999999,
+  "pending": 0,
+  "license_type": "free",
+  "period_type": "trial",
+  "expired_at": 0,
+  "coin": 0,
+  "limit": 1,
+  "group_expired_at": 0,
+  "is_tried": 1,
+  "is_activated": 1,
+  "allowed_device_count": 3,
+  "durations": 10,
+  "device_id": 123456789,
+  "product_id": 428,
+  "is_lifetime": 1,
+  "has_present": 1,
+  "vip_special": 1,
+  "begin_activated_time": 1680624579,
+  "remain_days": 365,
+  "will_expire": 0,
+  "has_buy_extend": 1,
+  "expire_time": "2099-12-31 23:59:59"
+};
+$done({body: JSON.stringify(bodyJson)});
