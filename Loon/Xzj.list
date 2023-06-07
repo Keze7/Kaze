@@ -1,0 +1,9 @@
+[Script]
+
+http-response
+
+^http[s]?:\/\/gw\.aoscdn\.com\/base\/vip\/client script-path=https://github.com/Keze7/Kaze/raw/main/Qx/Xzj.js
+
+[mitm]
+
+hostname = gw.aoscdn.com
