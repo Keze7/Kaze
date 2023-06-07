@@ -1,3 +1,4 @@
+/**
 [rewrite_local]
 
 ^https:\/\/gw\.aoscdn\.com\/base\/vip\/client url script-response-body https://github.com/Keze7/Kaze/raw/main/Qx/Xzj.js
