@@ -1,6 +1,6 @@
 [rewrite_local]
 
-^http[s]?:\/\/awvp\.aoscdn\.com\/base\/vip\/v2\/vips  url script-response-body https://github.com/Keze7/Kaze/raw/main/QX/pdf.js 
+^http[s]?:\/\/awvp\.aoscdn\.com\/base\/vip\/v2  url script-response-body https://github.com/Keze7/Kaze/raw/main/QX/pdf.js 
 
 [mitm]
 
@@ -18,7 +18,7 @@ var url = $request.url;
 
 var obj = JSON.parse(body);
 
-const vip = '/account/me';
+const vip = '/vips';
 
 if (url.indexOf(vip) != -1) {
 
