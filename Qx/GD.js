@@ -24,8 +24,6 @@ if (url.indexOf(Kaze) != -1) {
 
     obj.data.validdate= "2099-06-10";
 
-obj.data. = "V6";
-
     body = JSON.stringify(obj);
 
 }
