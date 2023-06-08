@@ -1,6 +1,6 @@
 [rewrite_local]
 
-^http[s]?:\/\/gdongapi\.wo-ish\.com\/MsgBoard url script-response-body https://github.com/Keze7/Kaze/raw/main/Qx/GD.js 
+^http[s]?:\/\/gdongapi\.wo-ish\.com\/user script-response-body https://github.com/Keze7/Kaze/raw/main/Qx/GD.js
 
 [mitm]
 
@@ -18,16 +18,17 @@ var url = $request.url;
 
 var obj = JSON.parse(body);
 
-const Kaze = '/ShupUpV5';
+const Kaze = '/getUInfo';
 
 if (url.indexOf(Kaze) != -1) {
 
-    obj.data.isPayVip = 1;
+    obj.data.validdate= "2099-06-10";
 
-obj.data.vipGrowthName = "V6";
+obj.data. = "V6";
 
     body = JSON.stringify(obj);
 
 }
 
 $done({body});
+
