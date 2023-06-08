@@ -4,7 +4,7 @@
 
 [mitm]
 
-gdongapi.wo-ish.com
+hostname = gdongapi.wo-ish.com
 
 let obj = JSON.parse($response.body);
 
