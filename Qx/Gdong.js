@@ -1,33 +1,37 @@
 [rewrite_local]
-
-^http[s]?:\/\/gdongapi\.wo-ish\.com\/user script-response-body https://github.com/Keze7/Kaze/raw/main/Qx/Gdong.js
-
+^http[s]?:\/\/gdongapi\.wo-ish.com\/MsgBoard\/ShupUpV5
 [mitm]
+gdongapi.wo-ish.com
 
-hostname = gdongapi.wo-ish.com
 
-/*
 
-‼️规则完全免费，仅供学习交流，🈲️商业用途
 
-*/
 
-var body = $response.body;
 
-var url = $request.url;
 
-var obj = JSON.parse(body);
 
-const Kaze = '/getUInfo';
+let obj = JSON.parse($response.body);
 
-if (url.indexOf(Kaze) != -1) {
+    obj ={
 
-    obj.data.validdate = "2099-06-10";
+  "errcode" : 0,
 
-obj.data.isvip = 1;
+  "data" : {
 
-    body = JSON.stringify(obj);
+    "endTime" : "2029-06-10",
+
+    "isPayVip" : 1,
+
+    "isStop" : 0,
+
+    "vipGrowthName" : "V1",
+
+    "isVip" : 1
+
+  },
+
+  "errmsg" : "请求成功"
 
 }
 
-$done({body});
+$done({body : JSON.stringify(obj)});
