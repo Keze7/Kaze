@@ -22,9 +22,9 @@ const Kaze = '/getUInfo';
 
 if (url.indexOf(Kaze) != -1) {
 
-    obj.data.validdate= "2099-06-10";
+    obj.data.validdate = "2099-06-10";
 
-obj.data.isvip= 1;
+obj.data.isvip = 1;
 
     body = JSON.stringify(obj);
 
