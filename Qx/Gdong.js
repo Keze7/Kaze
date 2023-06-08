@@ -1,5 +1,5 @@
 [rewrite_local]
-^http[s]?:\/\/gdongapi\.wo-ish.com\/MsgBoard\/ShupUpV5
+^http[s]?:\/\/gdongapi\.wo-ish.com\/MsgBoard\/ShupUpV5 url script-response-body https://github.com/Keze7/Kaze/raw/main/Qx/Gdong.js
 [mitm]
 gdongapi.wo-ish.com
 
