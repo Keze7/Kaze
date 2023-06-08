@@ -1,0 +1,38 @@
+/******************************
+
+脚本功能：网易云音乐解锁黑胶会员
+
+应用版本：8.10.01
+
+应用下载：http://t.cn/A6odZOwj
+
+脚本作者：Hausd0rff
+
+更新时间：2023-06-08
+
+脚本发布：https://t.me/yqc_123
+
+使用声明：‼️仅供学习交流, 🈲️商业用途
+
+*******************************
+
+#!name = 网易云
+
+#!desc = 解锁部分黑胶会员权限，去除全局广告，阻止日志上传，解锁会员歌曲，解锁会员音质，解锁会员下载，更多自行探索
+
+#!openUrl = 
+
+#!author = Keze7
+
+#!homepage = https://github.com/Keze7/Kaze/tree/main/Loon
+
+#!icon =https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netease_Music.png
+
+[Script]
+
+http-request ^https?:\/\/.*\/eapi\/(music|s(ong|ingle|earch)|album|link|zone|content|p(laylist|rivilege|laymode|urchased)|r(esni|nca)che|vip(auth|pro|(new)?center)|music-vip-membership).+ script-path=https://raw.githubusercontent.com/yqc007/QuantumultX/master/NeteaseMusicVipCrack.js, requires-body=false, tag=NeteaseMusicVipCrack
+
+[MITM]
+
+hostname = *music.163.com, 115.236.121.4, 115.236.118.34, 115.238.119.68, 183.136.182.19
+
