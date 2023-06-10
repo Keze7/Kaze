@@ -1,0 +1,23 @@
+#本脚本来源于@weiRen0频道:https://t.me/WeiRenQAQ
+
+#!name = LSP
+
+#!desc = 
+
+#!openUrl = 
+
+#!author = Keze7
+
+#!homepage = https://github.com/Keze7/Kaze/tree/main/Loon
+
+#!icon =
+
+[Rewrite]
+
+^http[s]?:\/\/tx.*com\/h5\/system\/sendSms url - reject-200
+
+^http[s]?:\/\/tx.*com\/image\?type\=account&username\=.*$ url - reject-200
+
+[MITM]
+
+hostname = ab.puitot.com,cfxian.xickud.com,ioeurn.yrvguhx.com,bblmfy.cbsbwr.com,bllmfy.hxcwqh.com,bbll.madou*,*.xd01.*,*.ggfzhbe.*,*.iouixp.*,*.zlslpx.*,*.pioxksa.*,*.iouixp.*,*zhihuav*,*8792hh*,*yhek*,lps.quftbyp.com,xpd.lrg3z7t.com,xlw.rsly4ni.com,*riyufanyi*,*fuhuida*,*milk*,plxk.fhlium.com,xdk.coegcj.com,xuoa.vwymyr.com,*rwut*,*luoli*,*cmw*,*cwc*,api.wy*.com,*jhkjcp*,*xhxxqt*,*wbbcv*,*wbwxe*,*wbtho*,*ouhklw*,*antvapp*,*s400*,*fuaybr*,api.685x.top,tx*.com,*wbbcv*,*wbapi*,*wbwxe*,*wbtho*,*xingman*,*ukids.cn,*palmestore*,*cyapi*,www.dmh*.com,*fuhuida*,smh*.com,*rwut*,api.wy*.com,api.hx*.com,bk*.com,tx*.com,51*.com,*sotong*,gentlemanapp*,*mysteel*,*ubestkid*,91*.com,*pfd*,*twittme*,*zhihuav*,*wbbcv*,*fuaybr*,appapi*,*17gwl*,*sgyrc*,*mnghx*,*czbt*,*snailsleep*,*.caiyunapp.*,*xo2xo*,*hnyiya*,sjk*,*sez*,51h*,*rwut*,*luoli*,*cmw*,*.zymk.cn,*antv*,*sssm*
