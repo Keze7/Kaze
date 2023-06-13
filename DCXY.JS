@@ -12,8 +12,8 @@ var body = $response.body;
 var url = $request.url;
 var obj = JSON.parse(body);
 
-const vip = '/current';
-if (url.indexOf(vip) != -1) {
+const Kaze = '/current';
+if (url.indexOf(Kaze) != -1) {
 
     obj.data.money = 100;
 
@@ -25,8 +25,8 @@ var body = $response.body;
 var url = $request.url;
 var obj = JSON.parse(body);
 
-const vip = '/queryAccount';
-if (url.indexOf(vip) != -1) {
+const Kaze = '/queryAccount';
+if (url.indexOf(Kaze) != -1) {
     obj.data.money = 100;
     body = JSON.stringify(obj);
 }
