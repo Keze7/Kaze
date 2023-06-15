@@ -1,3 +1,4 @@
+#完美解锁版本v1.3.2
 #!name = Nicegram
 #!desc = 解锁vip功能，去除广告显示，解锁禁止转发下载
 #!openUrl = 
