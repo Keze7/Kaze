@@ -1,0 +1,4 @@
+[rewrite_local]
+^https?:\/\/testflight\.apple\.com\/v\d\/accounts\/.+?\/install$ url script-echo-response https://gitlab.com/lodepuly/vpn_tool/-/raw/main/Resource/Script/TestFlight/TF_Download.js
+[mitm]
+hostname = testflight.apple.com
