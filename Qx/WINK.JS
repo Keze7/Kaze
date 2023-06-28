@@ -1,8 +1,8 @@
-
+/*******************************
 #作者Kaze   软件wink   版本1.5.00
 
 [rewrite_local]
-^https?:\/\/api-sub\.meitu\.com\/v2\/user\/vip_info_by_group\.json\? url script-response-body https://raw.githubusercontent.com/Keze7/Kaze/main/Qx/WINK.JS
+^https:\/\/api-sub\.meitu\.com\/v2\/user\/vip_info_by_group\.json\? url script-response-body https://raw.githubusercontent.com/Keze7/Kaze/main/Qx/WINK.JS
 [MITM]
 hostname = api-sub.meitu.com
 
