@@ -9,7 +9,7 @@
 使用声明：‼️仅供学习交流, 🈲️商业用途
 *******************************
 [rewrite_local]
-^https:\/\/api\.kmovie\.gifshow\.com\/rest\/n\/kmovie\/vip\/getVipStatus\? url script-response-body https://raw.githubusercontent.com/Keze7/Kaze/main/Qx/ky.js
+^https:\/\/api\.kmovie\.gifshow\.com\/rest\/n\/kmovie\/app\/template\/draft url script-response-body https://raw.githubusercontent.com/Keze7/Kaze/main/Qx/ky.js
 [MITM]
 hostname = api.kmovie.gifshow.com
 *******************************/
@@ -18,11 +18,15 @@ let obj = JSON.parse($response.body);
    
     obj = {
   "result" : 1,
-  "validThrough" : 20231223,
-  "uid" : 695806143947746728,
-  "host" : "public-bjxy-kcs-node889.idcyz.hb1.kwaidc.com",
-  "subscription" : true,
-  "vipValid" : true
+  "data" : {
+    "vipStatus" : true,
+    "vipTimes" : 300,
+    "amount" : 100,
+    "firstPurchase" : true,
+    "vipRemainTimes" : 100,
+    "productId" : "kuaiyingTemplateDraftPriceLevelOne"
+  },
+  "host" : "public-bjxy-kcs-node302.idcyz.hb1.kwaidc.com"
 }
 
 $done({body : JSON.stringify(obj)});
