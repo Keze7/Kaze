@@ -1,6 +1,13 @@
 /*******************************
-#作者Kaze   软件wink   版本1.5.00
-
+应用名称：Wink
+脚本功能：解锁会员
+应用版本：1.5.00
+应用下载：App Store
+脚本作者：Kaze
+更新时间：2023-06-28
+脚本发布：暂无
+使用声明：‼️仅供学习交流, 🈲️商业用途
+*******************************
 [rewrite_local]
 ^https:\/\/api-sub\.meitu\.com\/v2\/user\/vip_info_by_group\.json\? url script-response-body https://raw.githubusercontent.com/Keze7/Kaze/main/Qx/WINK.JS
 [MITM]
