@@ -1,8 +1,10 @@
 
-#!name=搜索切换
-#!desc=Q-Search
-#!icon= https://raw.githubusercontent.com/Keze7/Kaze/main/icon/144*Fda.PNG
-
+#!name = 快捷搜索
+#!desc = 将Safari搜索引擎改为DuckDuckGo，默认谷歌搜索,想修改成百度输入缩写bd，以此类推
+#!openUrl = 
+#!author = Keze7
+#!homepage = https://github.com/Keze7/Kaze/tree/main/Loon
+#!icon = https://github.com/Keze7/Kaze/raw/main/icon/IMG_1610.PNG
 [Rewrite]
 
 # yd  xxx (有道词典)
