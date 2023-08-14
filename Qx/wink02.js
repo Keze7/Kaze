@@ -12,7 +12,6 @@
 ^https:\/\/api-sub\.meitu\.com\/v2\/user url script-response-body https://github.com/Keze7/Kaze/new/main/Qx/wink02.js
 [mitm] 
 hostname = api-sub.meitu.com
-group.json
 */
 var body = $response.body;
 var url = $request.url;
