@@ -6,7 +6,7 @@
 #!icon = https://raw.githubusercontent.com/Keze7/Kaze/main/icon/DBDFB575-411D-46C7-893D-A6403C78E543.png
 #!date = 2024-04-01 00:36:34
 
-[Rule]
-URL-REGEX,^https:\/\/vip7\.fzwdyy\.cn:8083\/api\/getAdvertInfo,REJECT
+[Rewrite]
+^https:\/\/vip7\.fzwdyy\.cn:8083\/api\/getAdvertInfo reject
 [Mitm]
 hostname = vip7.fzwdyy.cn
