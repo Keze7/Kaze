@@ -1,0 +1,4 @@
+[Rule]
+URL-REGEX,^https:\/\/vip7\.fzwdyy\.cn:8083\/api\/getAdvertInfo,REJECT
+[Mitm]
+hostname = vip7.fzwdyy.cn
