@@ -7,6 +7,11 @@
 #!date = 2024-04-01 00:36:34
 
 [Rewrite]
-^https:\/\/vip7\.fzwdyy\.cn:8083\/api\/getAdvertInfo reject
-[Mitm]
-hostname = vip7.fzwdyy.cn
+^https?:\/\/[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+){1,3}(:\d+)?\/api\/v\d\/advert - reject-200
+
+[Script]
+http-response ^https?:\/\/[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+){1,3}(:\d+)?\/api\/v\d\/movie\/index_recommend script-path=https://github.com/ddgksf2013/Scripts/raw/master/555Ad.js, requires-body=true, timeout=60, tag=555Ad
+
+[MITM]
+hostname = *.qyfxgd.cn, *.weilai555.com, *.ecoliving168.com
+
