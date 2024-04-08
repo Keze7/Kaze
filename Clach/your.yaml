@@ -1,0 +1,711 @@
+#####使用前必读(不必删除必读内容)######
+#您好，这里离港懒人Clash配置模板(单机场)，欢迎加入频道&群组和大佬们一起讨论：
+#优质离港机场频道：https://t.me/airport_cn
+#离港vip候机室：https://t.me/airport_chat
+#规则来自blackmatrix7大佬：https://github.com/blackmatrix7/ios_rule_script/tree/master/rule
+#update：2023.09.16
+#使用方法：
+#第一步：Ctrl+A全选将此界面所有内容复制到本地用文本编辑器(记事本/Notepad++等)打开，一般是Ctrl+H组合键调出替换窗口，将“小杯”全部替换成你的机场名字即可！
+#第二步:将65行中url换成你的机场Clash订阅后导入即可！(特别注意：1.url的引号要保留;2.如果订阅下载不下来可以尝试在订阅后面加 &flag=clash)
+#update：2023.09.16
+#取消dns中的fallback参数，YouTube等外网打开有明显的提升-2023.09.16
+
+
+
+
+port: 7890
+socks-port: 7891
+redir-port: 7892
+tproxy-port: 7893
+mixed-port: 7890
+allow-lan: true
+bind-address: "*"
+mode: rule
+log-level: info
+#external-controller: 127.0.0.1:9090 #设置外部控制器的地址和端口，用于远程管理代理服务，我这里默认不设置
+profile:
+  store-selected: false
+  tracing: false
+  store-fake-ip: false
+dns:
+  enable: true
+  ipv6: false
+  listen: 0.0.0.0:1053
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  use-hosts: true
+  default-nameserver:
+    - 119.29.29.29
+    - 223.5.5.5
+  nameserver:
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
+  fake-ip-filter:
+    - '*.lan'
+    - localhost.ptlogin2.qq.com
+    - '+.srv.nintendo.net'
+    - '+.stun.playstation.net'
+    - '+.msftconnecttest.com'
+    - '+.msftncsi.com'
+    - '+.xboxlive.com'
+    - 'msftconnecttest.com'
+    - 'xbox.*.microsoft.com'
+    - '*.battlenet.com.cn'
+    - '*.battlenet.com'
+    - '*.blzstatic.cn'
+    - '*.battle.net'
+
+
+
+
+#远程订阅
+proxy-providers:
+  小杯_Subscription: &小杯 #建立锚点
+    type: http
+    url: "https://gist.githubusercontent.com/Keze7/16dd25c579fdb11462356f1539b26c75/raw/6666"
+    interval: 86400
+    path: ./providers/proxy/小杯.yaml
+    health-check:
+      enable: true
+      interval: 600
+      url: https://www.gstatic.com/generate_204
+
+#clah  p核正则
+#   (A).*(B)         节点名既有 A 也有 B 
+#   (A)|(B)          节点名有 A 或者 B   
+#   ^(?!.*A)         节点名不含有 A 
+#   ^(?!.*A).*(B)    节点名不含有 A 但含有 B
+#   ^(?!.*(A|B))     节点名既不含有 A 也不含有 B
+
+#订阅正则提取分组
+#小杯部分
+  小杯_Filter_All:
+    <<: *小杯
+
+  小杯_Filter_HK:
+    <<: *小杯
+    filter: (?i)香港|🇭🇰|HK|Hong
+
+  小杯_Filter_TW:
+    <<: *小杯
+    filter: (?i)台(湾|灣)|🇹🇼|TW|Taiwan
+
+  小杯_Filter_SG:
+    <<: *小杯
+    filter: (?i)狮|獅|🇸🇬|加坡|SG|Singapore
+
+  小杯_Filter_US:
+    <<: *小杯
+    filter: (?i)美(国|國)|🇺🇸|US|States|American
+
+  小杯_Filter_JP:
+    <<: *小杯
+    filter: (?i)日本|🇯🇵|(东|東)京|JP|Japan
+
+
+
+#策略分组
+proxy-groups:
+  - name: Final_Match
+    type: select
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/airport_logo/%E7%A6%BB%E6%B8%AF.png
+    proxies:
+      - DIRECT
+      - 小杯
+      - 小杯♡香港节点(Fallback)
+      - 小杯♡新加坡节点(Fallback)
+      - 小杯♡美国节点(Fallback)
+      - 小杯♡香港节点
+      - 小杯♡台湾节点
+      - 小杯♡新加坡节点
+      - 小杯♡美国节点
+      - 小杯♡日本节点
+    use:        
+      - 小杯_Filter_All
+
+  - name: 小杯
+    type: select
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/airport_logo/Nexitally.png
+    proxies:
+      - 小杯♡香港节点(Fallback)
+      - 小杯♡新加坡节点(Fallback)
+      - 小杯♡美国节点(Fallback)
+      - 小杯♡香港节点
+      - 小杯♡台湾节点
+      - 小杯♡新加坡节点
+      - 小杯♡美国节点
+      - 小杯♡日本节点
+    use:        
+      - 小杯_Filter_All
+
+  - name: Telegram
+    type: select
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/Telegram.png
+    proxies:
+      - 小杯
+      - 小杯♡香港节点(Fallback)
+      - 小杯♡新加坡节点(Fallback)
+      - 小杯♡美国节点(Fallback)
+      - 小杯♡香港节点
+      - 小杯♡台湾节点
+      - 小杯♡新加坡节点
+      - 小杯♡美国节点
+      - 小杯♡日本节点
+    use:        
+      - 小杯_Filter_All
+
+  - name: YouTube
+    type: select
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/YouTube.png
+    proxies:
+      - 小杯
+      - 小杯♡香港节点(Fallback)
+      - 小杯♡新加坡节点(Fallback)
+      - 小杯♡美国节点(Fallback)
+      - 小杯♡香港节点
+      - 小杯♡台湾节点
+      - 小杯♡新加坡节点
+      - 小杯♡美国节点
+      - 小杯♡日本节点
+    use:        
+      - 小杯_Filter_All
+
+
+  - name: Google
+    type: select
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/Google.png
+    proxies:
+      - 小杯
+      - 小杯♡香港节点(Fallback)
+      - 小杯♡新加坡节点(Fallback)
+      - 小杯♡美国节点(Fallback)
+      - 小杯♡香港节点
+      - 小杯♡台湾节点
+      - 小杯♡新加坡节点
+      - 小杯♡美国节点
+      - 小杯♡日本节点
+    use:        
+      - 小杯_Filter_All
+
+  - name: Netflix
+    type: select
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/Netflix.png
+    proxies:
+      - 小杯
+      - 小杯♡香港节点(Fallback)
+      - 小杯♡新加坡节点(Fallback)
+      - 小杯♡美国节点(Fallback)
+      - 小杯♡香港节点
+      - 小杯♡台湾节点
+      - 小杯♡新加坡节点
+      - 小杯♡美国节点
+      - 小杯♡日本节点
+    use:        
+      - 小杯_Filter_All
+
+  - name: Disney
+    type: select
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/Disney+.png
+    proxies:
+      - 小杯
+      - 小杯♡香港节点(Fallback)
+      - 小杯♡新加坡节点(Fallback)
+      - 小杯♡美国节点(Fallback)
+      - 小杯♡香港节点
+      - 小杯♡台湾节点
+      - 小杯♡新加坡节点
+      - 小杯♡美国节点
+      - 小杯♡日本节点
+    use:        
+      - 小杯_Filter_All
+
+  - name: HBO
+    type: select
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/HBO_Max.png
+    proxies:
+      - 小杯
+      - 小杯♡香港节点(Fallback)
+      - 小杯♡新加坡节点(Fallback)
+      - 小杯♡美国节点(Fallback)
+      - 小杯♡香港节点
+      - 小杯♡台湾节点
+      - 小杯♡新加坡节点
+      - 小杯♡美国节点
+      - 小杯♡日本节点
+    use:        
+      - 小杯_Filter_All
+
+  - name: BiliBili
+    type: select
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/BiliBili.png
+    proxies:
+      - DIRECT
+      - 小杯
+      - 小杯♡香港节点(Fallback)
+      - 小杯♡新加坡节点(Fallback)
+      - 小杯♡美国节点(Fallback)
+      - 小杯♡香港节点
+      - 小杯♡台湾节点
+      - 小杯♡新加坡节点
+      - 小杯♡美国节点
+      - 小杯♡日本节点
+    use:        
+      - 小杯_Filter_All
+
+  - name: Spotify
+    type: select
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/Spotify.png
+    proxies:
+      - 小杯
+      - 小杯♡香港节点(Fallback)
+      - 小杯♡新加坡节点(Fallback)
+      - 小杯♡美国节点(Fallback)
+      - 小杯♡香港节点
+      - 小杯♡台湾节点
+      - 小杯♡新加坡节点
+      - 小杯♡美国节点
+      - 小杯♡日本节点
+    use:        
+      - 小杯_Filter_All
+
+  - name: OpenAI
+    type: select
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/OpenAi.png
+    proxies:
+      - 小杯
+      - 小杯♡香港节点(Fallback)
+      - 小杯♡新加坡节点(Fallback)
+      - 小杯♡美国节点(Fallback)
+      - 小杯♡香港节点
+      - 小杯♡台湾节点
+      - 小杯♡新加坡节点
+      - 小杯♡美国节点
+      - 小杯♡日本节点
+    use:        
+      - 小杯_Filter_All
+
+  - name: Steam
+    type: select
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/Steam.png
+    proxies:
+      - DIRECT
+      - 小杯
+      - 小杯♡香港节点(Fallback)
+      - 小杯♡新加坡节点(Fallback)
+      - 小杯♡美国节点(Fallback)
+      - 小杯♡香港节点
+      - 小杯♡台湾节点
+      - 小杯♡新加坡节点
+      - 小杯♡美国节点
+      - 小杯♡日本节点
+    use:        
+      - 小杯_Filter_All
+
+  - name: Emby
+    type: select
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/Emby.png
+    proxies:
+      - DIRECT
+      - 小杯
+      - 小杯♡香港节点(Fallback)
+      - 小杯♡新加坡节点(Fallback)
+      - 小杯♡美国节点(Fallback)
+      - 小杯♡香港节点
+      - 小杯♡台湾节点
+      - 小杯♡新加坡节点
+      - 小杯♡美国节点
+      - 小杯♡日本节点
+    use:        
+      - 小杯_Filter_All
+
+  - name: Instagram
+    type: select
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/Instagram.png
+    proxies:
+      - 小杯
+      - 小杯♡香港节点(Fallback)
+      - 小杯♡新加坡节点(Fallback)
+      - 小杯♡美国节点(Fallback)
+      - 小杯♡香港节点
+      - 小杯♡台湾节点
+      - 小杯♡新加坡节点
+      - 小杯♡美国节点
+      - 小杯♡日本节点
+    use:        
+      - 小杯_Filter_All
+
+  - name: TikTok
+    type: select
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/TikTok.png
+    proxies:
+      - 小杯
+      - 小杯♡香港节点(Fallback)
+      - 小杯♡新加坡节点(Fallback)
+      - 小杯♡美国节点(Fallback)
+      - 小杯♡香港节点
+      - 小杯♡台湾节点
+      - 小杯♡新加坡节点
+      - 小杯♡美国节点
+      - 小杯♡日本节点
+    use:        
+      - 小杯_Filter_All
+
+  - name: Twitter
+    type: select
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/Twitter.png
+    proxies:
+      - 小杯
+      - 小杯♡香港节点(Fallback)
+      - 小杯♡新加坡节点(Fallback)
+      - 小杯♡美国节点(Fallback)
+      - 小杯♡香港节点
+      - 小杯♡台湾节点
+      - 小杯♡新加坡节点
+      - 小杯♡美国节点
+      - 小杯♡日本节点
+    use:        
+      - 小杯_Filter_All
+
+  - name: Weibo
+    type: select
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/Weibo.png
+    proxies:
+      - DIRECT
+      - 小杯
+      - 小杯♡香港节点(Fallback)
+      - 小杯♡新加坡节点(Fallback)
+      - 小杯♡美国节点(Fallback)
+      - 小杯♡香港节点
+      - 小杯♡台湾节点
+      - 小杯♡新加坡节点
+      - 小杯♡美国节点
+      - 小杯♡日本节点
+    use:        
+      - 小杯_Filter_All
+
+  - name: Apple
+    type: select
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/Apple.png
+    proxies:
+      - DIRECT
+      - 小杯
+      - 小杯♡香港节点(Fallback)
+      - 小杯♡新加坡节点(Fallback)
+      - 小杯♡美国节点(Fallback)
+      - 小杯♡香港节点
+      - 小杯♡台湾节点
+      - 小杯♡新加坡节点
+      - 小杯♡美国节点
+      - 小杯♡日本节点
+    use:        
+      - 小杯_Filter_All
+
+  - name: Microsoft
+    type: select
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/Microsoft.png
+    proxies:
+      - DIRECT
+      - 小杯
+      - 小杯♡香港节点(Fallback)
+      - 小杯♡新加坡节点(Fallback)
+      - 小杯♡美国节点(Fallback)
+      - 小杯♡香港节点
+      - 小杯♡台湾节点
+      - 小杯♡新加坡节点
+      - 小杯♡美国节点
+      - 小杯♡日本节点
+    use:        
+      - 小杯_Filter_All
+
+  - name: Download
+    type: select
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/Download.png
+    proxies:
+      - DIRECT
+      - 小杯
+      - 小杯♡香港节点(Fallback)
+      - 小杯♡新加坡节点(Fallback)
+      - 小杯♡美国节点(Fallback)
+      - 小杯♡香港节点
+      - 小杯♡台湾节点
+      - 小杯♡新加坡节点
+      - 小杯♡美国节点
+      - 小杯♡日本节点
+    use:        
+      - 小杯_Filter_All
+
+#小杯部分
+  - name: 小杯♡香港节点(Fallback)
+    type: fallback
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/HK.png
+    url: https://www.gstatic.com/generate_204
+    interval: 60
+    lazy: true
+    proxies:
+    use:
+      - 小杯_Filter_HK
+
+  - name: 小杯♡新加坡节点(Fallback)
+    type: fallback
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/SG.png
+    url: https://www.gstatic.com/generate_204
+    interval: 60
+    lazy: true
+    proxies:
+    use:
+      - 小杯_Filter_SG
+
+  - name: 小杯♡美国节点(Fallback)
+    type: fallback
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/US.png
+    url: https://www.gstatic.com/generate_204
+    interval: 60
+    lazy: true
+    proxies:
+    use:
+      - 小杯_Filter_US
+
+  - name: 小杯♡香港节点
+    type: select
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/HK.png
+    proxies:
+    use:
+      - 小杯_Filter_HK
+
+  - name: 小杯♡台湾节点
+    type: select
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/TW.png
+    proxies:
+    use:
+      - 小杯_Filter_TW
+
+  - name: 小杯♡新加坡节点
+    type: select
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/SG.png
+    proxies:
+    use:
+      - 小杯_Filter_SG
+
+  - name: 小杯♡美国节点
+    type: select
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/US.png
+    proxies:
+    use:
+      - 小杯_Filter_US
+
+  - name: 小杯♡日本节点
+    type: select
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/JP.png
+    proxies:
+    use:
+      - 小杯_Filter_JP
+
+
+#远程规则集合
+rule-providers:
+  #本地
+  Lan_rule:
+    type: http
+    behavior: classical
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Lan/Lan.yaml"
+    path: ./RuleSet/Lan.yaml
+    interval: 86400
+
+  #国内域名
+  China_rule:
+    type: http
+    behavior: classical
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMax/ChinaMax_Classical.yaml"
+    path: ./RuleSet/ChinaMax_Classical.yaml
+    interval: 86400
+
+  #常用下载软件
+  Download_rule:
+    type: http
+    behavior: classical
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Download/Download.yaml"
+    path: ./RuleSet/Download.yaml
+    interval: 86400
+
+  #流媒体
+  YouTube_rule:
+    type: http
+    behavior: classical
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.yaml"
+    path: ./RuleSet/YouTube.yaml
+    interval: 86400
+
+  Emby_rule:
+    type: http
+    behavior: classical
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Emby/Emby.yaml"
+    path: ./RuleSet/Emby.yaml
+    interval: 86400
+
+  Netflix_rule:
+    type: http
+    behavior: classical
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix.yaml"
+    path: ./RuleSet/Netflix.yaml
+    interval: 86400
+
+  HBO_rule:
+    type: http
+    behavior: classical
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/HBO/HBO.yaml"
+    path: ./RuleSet/HBO.yaml
+    interval: 86400
+
+  Disney_rule:
+    type: http
+    behavior: classical
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Disney/Disney.yaml"
+    path: ./RuleSet/Disney.yaml
+    interval: 86400
+
+  #Telegram
+  Telegram_rule:
+    type: http
+    behavior: classical
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.yaml"
+    path: ./RuleSet/Telegram.yaml
+    interval: 86400
+
+  #Google
+  Google_rule:
+    type: http
+    behavior: classical
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.yaml"
+    path: ./RuleSet/Google.yaml
+    interval: 86400
+
+  #Steam
+  Steam_rule:
+    type: http
+    behavior: classical
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Steam/Steam.yaml"
+    path: ./RuleSet/Steam.yaml
+    interval: 86400
+
+  #Apple
+  Apple_Classical_rule:
+    type: http
+    behavior: classical
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple_Classical.yaml"
+    path: ./RuleSet/Apple_Classical.yaml
+    interval: 86400
+
+  #Microsoft
+  Microsoft_rule:
+    type: http
+    behavior: classical
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.yaml"
+    path: ./RuleSet/Microsoft.yaml
+    interval: 86400
+
+  #OpenAI
+  OpenAI_rule:
+    type: http
+    behavior: classical
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OpenAI/OpenAI.yaml"
+    path: ./RuleSet/OpenAI.yaml
+    interval: 86400
+
+  #Spotify
+  Spotify_rule:
+    type: http
+    behavior: classical
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Spotify/Spotify.yaml"
+    path: ./RuleSet/Spotify.yaml
+    interval: 86400
+
+  #TikTok
+  TikTok_rule:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TikTok/TikTok.yaml"
+    path: ./RuleSet/TikTok.yaml
+    interval: 86400
+
+  #BiliBili
+  BiliBili_rule:
+    type: http
+    behavior: classical
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/BiliBili/BiliBili.yaml"
+    path: ./RuleSet/BiliBili.yaml
+    interval: 86400
+
+  #Twitter
+  Twitter_rule:
+    type: http
+    behavior: classical
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Twitter/Twitter.yaml"
+    path: ./RuleSet/Twitter.yaml
+    interval: 86400
+
+  #Instagram
+  Instagram_rule:
+    type: http
+    behavior: classical
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Instagram/Instagram.yaml"
+    path: ./RuleSet/Instagram.yaml
+    interval: 86400
+
+  #Weibo
+  Weibo_rule:
+    type: http
+    behavior: classical
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Weibo/Weibo.yaml"
+    path: ./RuleSet/Weibo.yaml
+    interval: 86400
+
+
+rules:
+  # Telegram
+  - RULE-SET,Telegram_rule,Telegram 
+
+  # OpenAI
+  - RULE-SET,OpenAI_rule,OpenAI
+
+  # Apple
+  - RULE-SET,Apple_Classical_rule,Apple
+  
+  # Microsoft
+  - RULE-SET,Microsoft_rule,Microsoft
+ 
+  # 媒体
+  - RULE-SET,YouTube_rule,YouTube
+  - RULE-SET,Emby_rule,Emby
+  - RULE-SET,Netflix_rule,Netflix
+  - RULE-SET,Disney_rule,Disney
+  - RULE-SET,HBO_rule,HBO
+  - RULE-SET,BiliBili_rule,BiliBili
+
+  # Steam
+  - RULE-SET,Steam_rule,Steam
+
+  # Google
+  - RULE-SET,Google_rule,Google
+
+  # 音乐
+  - RULE-SET,Spotify_rule,Spotify
+
+  # 社交APP
+  - RULE-SET,Instagram_rule,Instagram
+  - RULE-SET,TikTok_rule,TikTok
+  - RULE-SET,Twitter_rule,Twitter
+  - RULE-SET,Weibo_rule,Weibo
+
+
+  #本地局域网
+  - RULE-SET,Lan_rule,DIRECT
+ 
+  # 国内
+  - RULE-SET,China_rule,DIRECT,no-resolve  #no-resolve加上就是不解析DNS
+  - GEOIP,CN,DIRECT
+
+  #常用下载软件
+  - RULE-SET,Download_rule,Download
+
+  # 必须
+  - MATCH,Final_Match
