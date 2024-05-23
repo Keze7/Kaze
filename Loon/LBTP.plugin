@@ -1,0 +1,11 @@
+#!name=乐播投屏
+#!desc=解锁[̲̅V̲̅I̲̅P̲̅]  版本:5.9.56
+#!author = kaze
+#!homepage = https://github.com/Keze7/Kaze/blob/main/Loon/LBTP.plugin
+#!icon=https://github.com/Keze7/Kaze/raw/main/icon/5D4682E2-5D38-4709-9572-5FEE5BA4E253.jpeg
+#!date = 2024-05-23 12:01:06
+[Script]
+http-response ^https?:\/\/saas\.hpplay\.cn\/api\/lebo-member\/app\/member\/relation\/rights? script-path=https://raw.githubusercontent.com/Rnik666/YJTJS/main/LBTP.js, requires-body=true, timeout=60, tag=解锁[̲̅V̲̅I̲̅P̲̅]
+
+[MITM]
+hostname = saas.hpplay.cn
