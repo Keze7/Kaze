@@ -1,0 +1,16 @@
+#!name = 到梦空间
+#!desc = 过滤开屏广告
+#!openUrl = https://apps.apple.com/cn/app/%E5%88%B0%E6%A2%A6%E7%A9%BA%E9%97%B4/id1111507151
+#!author = kaze
+#!homepage = https://github.com/Keze7/Kaze/tree/main/Loon/555.list
+#!icon = https://raw.githubusercontent.com/Keze7/Kaze/refs/heads/main/icon/D47F3725-87C6-4806-8C77-165CBC263075.png
+#!date = 2024-10/28-13:11
+
+[Rewrite]
+#去除开屏及我的页面广告
+^https?:\/\/appdmkj\.5idream\.net\/v2\/login\/message\/tip reject-dict
+https://appdmkj.5idream.net/v3/user/advertising/list reject-dict
+^https?:\/\/appdmkj\.5idream\.net\/appPic\/homepage reject-dict
+
+[Mitm]
+hostname = appdmkj.5idream.net
