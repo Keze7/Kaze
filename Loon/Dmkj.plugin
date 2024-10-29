@@ -9,7 +9,6 @@
 [Rewrite]
 #去除开屏,我的页面广告,报名页面广告
 
-^http:\/\/image\.5idream\.net\/mine\/ad reject-dict
 ^https?:\/\/appdmkj\.5idream\.net\/v2\/login\/message\/tip reject-dict
 https://appdmkj.5idream.net/v3/user/advertising/list reject-dict
 ^https?:\/\/appdmkj\.5idream\.net\/appPic\/homepage reject-dict
