@@ -1,0 +1,21 @@
+#!name = AD杀手
+#!desc = 广告搞心态
+#!openUrl = 
+#!author = kaze
+#!homepage = https://github.com/Keze7/Kaze/tree/main/Loon
+#!icon = https://raw.githubusercontent.com/Keze7/Kaze/refs/heads/main/icon/AD.PNG
+#!date = 2024-10-31 20:31
+
+
+[Rewrite]
+#>幸福唐山开屏广告
+^https:\/\/apps\.eshiyun\.info\/advertisement-consumer reject-dict
+
+#>花小猪打车开屏广告页面里面有误杀
+https:\/\/img-[a-z0-9]+\.didistatic\.com\/static\/[a-z0-9_]+\/[a-z0-9_]+\.jpg reject-dict
+
+#>掌上CF
+^https:\/\/yoyo\.qq\.com\/button reject-dict
+
+[Mitm]
+hostname = apps.eshiyun.info,img-ys011.didistatic.com,yoyo.qq.com
