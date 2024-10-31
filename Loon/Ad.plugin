@@ -8,14 +8,19 @@
 
 
 [Rewrite]
+#>到梦空间去除开屏,我的页面广告,报名页面广告
+^https?:\/\/appdmkj\.5idream\.net\/v2\/login\/message\/tip reject-dict
+https://appdmkj.5idream.net/v3/user/advertising/list reject-dict
+^https?:\/\/appdmkj\.5idream\.net\/appPic\/homepage reject-dict
+
 #>幸福唐山开屏广告
 ^https:\/\/apps\.eshiyun\.info\/advertisement-consumer reject-dict
 
 #>花小猪打车开屏广告页面里面有误杀
 https:\/\/img-[a-z0-9]+\.didistatic\.com\/static\/[a-z0-9_]+\/[a-z0-9_]+\.jpg reject-dict
 
-#>掌上CF
+#>掌上CF还是有请求
 ^https:\/\/yoyo\.qq\.com\/button reject-dict
 
 [Mitm]
-hostname = apps.eshiyun.info,img-ys011.didistatic.com,yoyo.qq.com
+hostname = apps.eshiyun.info,img-ys011.didistatic.com,yoyo.qq.com,appdmkj.5idream.net
