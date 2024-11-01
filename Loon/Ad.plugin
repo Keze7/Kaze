@@ -8,6 +8,9 @@
 
 
 [Rewrite]
+#>阿里云盘弹窗广告
+^https:\/\/log\.mmstat\.com\/m\.gif reject-dict
+
 #>志愿汇开屏,弹窗,图标广告
 ^http:\/\/ad\.lovefree\.cc\/getAd reject-dict
 ^https:\/\/s3plus\.meituan\.net\/v1 reject-dict
@@ -27,4 +30,4 @@ https:\/\/img-[a-z0-9]+\.didistatic\.com\/static\/[a-z0-9_]+\/[a-z0-9_]+\.jpg re
 ^https:\/\/yoyo\.qq\.com\/button reject-dict
 
 [Mitm]
-hostname = apps.eshiyun.info,img-ys011.didistatic.com,yoyo.qq.com,appdmkj.5idream.net,ad.lovefree.cc,s3plus.meituan.net
+hostname = apps.eshiyun.info,img-ys011.didistatic.com,yoyo.qq.com,appdmkj.5idream.net,ad.lovefree.cc,s3plus.meituan.net,log.mmstat.com
