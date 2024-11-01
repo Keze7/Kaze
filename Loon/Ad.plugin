@@ -8,6 +8,10 @@
 
 
 [Rewrite]
+#>志愿汇开屏,弹窗,图标广告
+^http:\/\/ad\.lovefree\.cc\/getAd reject-dict
+^https:\/\/s3plus\.meituan\.net\/v1 reject-dict
+
 #>到梦空间去除开屏,我的页面广告,报名页面广告
 ^https?:\/\/appdmkj\.5idream\.net\/v2\/login\/message\/tip reject-dict
 https://appdmkj.5idream.net/v3/user/advertising/list reject-dict
@@ -23,4 +27,4 @@ https:\/\/img-[a-z0-9]+\.didistatic\.com\/static\/[a-z0-9_]+\/[a-z0-9_]+\.jpg re
 ^https:\/\/yoyo\.qq\.com\/button reject-dict
 
 [Mitm]
-hostname = apps.eshiyun.info,img-ys011.didistatic.com,yoyo.qq.com,appdmkj.5idream.net
+hostname = apps.eshiyun.info,img-ys011.didistatic.com,yoyo.qq.com,appdmkj.5idream.net,ad.lovefree.cc,s3plus.meituan.net
