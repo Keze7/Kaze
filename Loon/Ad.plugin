@@ -8,6 +8,7 @@
 
 
 [Rewrite]
+
 #>超级课程表更新弹窗
 ^http:\/\/120\.55\.151\.61:80\/Base\/WindowConfig
 
