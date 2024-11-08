@@ -8,6 +8,9 @@
 
 
 [Rewrite]
+#>超级课程表更新弹窗
+^http:\/\/120\.55\.151\.61:80\/Base\/WindowConfig
+
 #>一刻相册开屏广告
 ^https:\/\/img2\.360buyimg\.com\/tgx\/jfs\/t1 reject-dict
 
@@ -33,4 +36,4 @@ https:\/\/img-[a-z0-9]+\.didistatic\.com\/static\/[a-z0-9_]+\/[a-z0-9_]+\.jpg re
 ^https:\/\/yoyo\.qq\.com\/button reject-dict
 
 [Mitm]
-hostname = apps.eshiyun.info,img-ys011.didistatic.com,yoyo.qq.com,appdmkj.5idream.net,ad.lovefree.cc,s3plus.meituan.net,log.mmstat.com,img2.360buyimg.com
+hostname = apps.eshiyun.info,img-ys011.didistatic.com,yoyo.qq.com,appdmkj.5idream.net,ad.lovefree.cc,s3plus.meituan.net,log.mmstat.com,img2.360buyimg.com,120.55.151.61:80
