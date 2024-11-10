@@ -9,6 +9,11 @@
 
 [Rewrite]
 
+#>快影开屏
+^https:\/\/api\.kmovie\.gifshow\.com\/rest\/n\/kmovie\/app\/resource reject-dict
+^https:\/\/p3-sign\.douyinpic\.com\/tos-cn-p-0051 reject-dict
+^https:\/\/p2-lm\.adukwai\.com\/bs2\/adUnionVideo reject-dict
+
 #>超级课程表更新弹窗
 ^http:\/\/120\.55\.151\.61:80\/Base\/WindowConfig\/ reject-dict
 #>一刻相册开屏广告
@@ -36,4 +41,4 @@ https:\/\/img-[a-z0-9]+\.didistatic\.com\/static\/[a-z0-9_]+\/[a-z0-9_]+\.jpg re
 ^https:\/\/yoyo\.qq\.com\/button reject-dict
 
 [Mitm]
-hostname = apps.eshiyun.info,img-ys011.didistatic.com,yoyo.qq.com,appdmkj.5idream.net,ad.lovefree.cc,s3plus.meituan.net,log.mmstat.com,img2.360buyimg.com,120.55.151.61:80
+hostname = apps.eshiyun.info,img-ys011.didistatic.com,yoyo.qq.com,appdmkj.5idream.net,ad.lovefree.cc,s3plus.meituan.net,log.mmstat.com,img2.360buyimg.com,120.55.151.61:80,api.kmovie.gifshow.com,p3-sign.douyinpic.com,p2-lm.adukwai.com
