@@ -1,10 +1,10 @@
-#!name = AD杀手
-#!desc = 广告搞心态
+#!name = 广告拦截&净化
+#!desc = 广告搞人心态
 #!openUrl = 
 #!author = kaze
 #!homepage = https://github.com/Keze7/Kaze/tree/main/Loon
-#!icon = https://raw.githubusercontent.com/Keze7/Kaze/refs/heads/main/icon/AD.PNG
-#!date = 2024-11-10 18:33
+#!icon = https://raw.githubusercontent.com/Keze7/Kaze/refs/heads/main/icon/advertise.png
+#!date = 2024-11-10 23:24
 
 
 [Rewrite]
