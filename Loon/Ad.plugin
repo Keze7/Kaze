@@ -16,6 +16,7 @@
 
 #>超级课程表更新弹窗
 ^http:\/\/120\.55\.151\.61:80\/Base\/WindowConfig\/ reject-dict
+
 #>一刻相册开屏广告
 ^https:\/\/img2\.360buyimg\.com\/tgx\/jfs\/t1 reject-dict
 
