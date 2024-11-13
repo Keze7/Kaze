@@ -4,7 +4,7 @@
 #!author = kaze
 #!homepage = https://github.com/Keze7/Kaze/tree/main/Loon
 #!icon = https://raw.githubusercontent.com/Keze7/Kaze/refs/heads/main/icon/advertise.png
-#!date = 2024-11-12 11:31
+#!date = 2024-11-13 17:18
 
 
 [Rewrite]
@@ -32,7 +32,8 @@
 ^http:\/\/ad\.lovefree\.cc\/getAd reject-dict
 ^https:\/\/s3plus\.meituan\.net\/v1 reject-dict
 
-#>到梦空间去除开屏,我的页面广告,报名页面广告
+#>到梦空间去除开屏,我的页面广告,报名页面广告,弹窗广告
+^http:\/\/image\.5idream\.net\/notification\/activity reject-dict
 ^https?:\/\/appdmkj\.5idream\.net\/v2\/login\/message\/tip reject-dict
 https://appdmkj.5idream.net/v3/user/advertising/list reject-dict
 ^https?:\/\/appdmkj\.5idream\.net\/appPic\/homepage reject-dict
@@ -47,4 +48,4 @@ https:\/\/img-[a-z0-9]+\.didistatic\.com\/static\/[a-z0-9_]+\/[a-z0-9_]+\.jpg re
 ^https:\/\/yoyo\.qq\.com\/button reject-dict
 
 [Mitm]
-hostname = apps.eshiyun.info,img-ys011.didistatic.com,yoyo.qq.com,appdmkj.5idream.net,ad.lovefree.cc,s3plus.meituan.net,log.mmstat.com,img2.360buyimg.com,120.55.151.61:80,api.kmovie.gifshow.com,p3-sign.douyinpic.com,p2-lm.adukwai.com,api.ruubypay.com,staticsns.cdn.bcebos.com
+hostname = apps.eshiyun.info,img-ys011.didistatic.com,yoyo.qq.com,appdmkj.5idream.net,ad.lovefree.cc,s3plus.meituan.net,log.mmstat.com,img2.360buyimg.com,120.55.151.61:80,api.kmovie.gifshow.com,p3-sign.douyinpic.com,p2-lm.adukwai.com,api.ruubypay.com,staticsns.cdn.bcebos.com,image.5idream.net
