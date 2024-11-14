@@ -3,10 +3,10 @@
 http-response ^https:\/\/casper-agent\.hongyibo\.com\.cn\/agent\/v3\/feeds\? script-path=hxzfeeds.js, timeout=60, tag=首页信息流
 
 # 导航栏
-http-response ^https:\/\/api\.hongyibo\.com\.cn\/gulfstream\/passenger-center\/v\d\/other\/pData\? script-path=hxz.js, timeout=60, tag=导航栏
+http-response ^https:\/\/api\.hongyibo\.com\.cn\/gulfstream\/passenger-center\/v\d\/other\/pData\? script-path=https://github.com/Keze7/Kaze/raw/refs/heads/main/Loon/hxz.js, timeout=60, tag=导航栏
 
 # 资源列表
-http-response ^https:\/\/api\.hongyibo\.com\.cn\/gulfstream\/passenger-center\/v1\/other\/pLayout\? script-path=hxzziyuan.js, timeout=60, tag=资源列表
+http-response ^https:\/\/api\.hongyibo\.com\.cn\/gulfstream\/passenger-center\/v1\/other\/pLayout\? script-path=https://github.com/Keze7/Kaze/raw/refs/heads/main/Loon/hxzziyuan.js, timeout=60, tag=资源列表
 
 
 # 侧边栏
@@ -24,11 +24,6 @@ http-response ^https:\/\/api\.hongyibo\.com\.cn\/gulfstream\/passenger\/v2\/core
 # 顺风车输入地址后界面
 http-response ^https:\/\/api\.hongyibo\.com\.cn\/gulfstream\/pre-sale\/v2\/core\/pMultiEstimatePrice\? script-path=hxzsfc.js, timeout=60, tag=顺风车输入地址后界面
 
-# 顺风车，代驾界面围巾
-http-response ^https:\/\/api\.hongyibo\.com\.cn\/gulfstream\/pre-sale\/v2\/core\/IndexInfo\? url reject-dict, tag=顺风车代驾界面围巾
-
-# 满意度调查
-http-response ^https:\/\/api\.hongyibo\.com\.cn\/gulfstream\/iapetos\/service\/pGetCommentData\? url reject-dict, tag=满意度调查
 
 # 花花会员中心底部轮播横幅
 http-response ^https:\/\/dop\.hongyibo\.com\.cn\/growth-member\/api\/user\/index\? script-path=hxzvip.js, timeout=60, tag=花花会员中心底部轮播横幅
@@ -51,6 +46,12 @@ http-response ^https:\/\/common\.hongyibo\.com\.cn\/passenger\/discount\? script
 
 # 首页安全中心提醒
 ^https:\/\/sec-guard\.hongyibo\.com\.cn\/api\/guard\/psg\/v2\/getShieldStatus\? reject-dict
+
+# 顺风车，代驾界面围巾
+^https:\/\/api\.hongyibo\.com\.cn\/gulfstream\/pre-sale\/v2\/core\/IndexInfo\? reject-dict
+
+# 满意度调查
+^https:\/\/api\.hongyibo\.com\.cn\/gulfstream\/iapetos\/service\/pGetCommentData\? reject-dict
 
 
 
