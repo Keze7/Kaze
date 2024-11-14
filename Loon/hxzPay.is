@@ -1,0 +1,20 @@
+let body = JSON.parse($response.body);
+
+if (body.data) {
+  // Clear the goods_list entry
+  if (body.data.goods_list) {
+    body.data.goods_list = [];
+  }
+
+  if (body.data.bill_detail && Array.isArray(body.data.bill_detail.external_channel_list)) {
+    
+   //body.data.bill_detail.external_channel_list = body.data.bill_detail.external_channel_list.filter(channel => channel.name !== "花小猪付");// 删除花小猪付
+    body.data.bill_detail.external_channel_list.forEach(channel => {
+      if (channel.sign_guide) {
+        delete channel.sign_guide.tips;
+      }
+    });
+  }
+}
+
+$done({ body: JSON.stringify(body) });
