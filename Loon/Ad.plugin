@@ -4,7 +4,7 @@
 #!author = kaze
 #!homepage = https://github.com/Keze7/Kaze/tree/main/Loon
 #!icon = https://raw.githubusercontent.com/Keze7/Kaze/refs/heads/main/icon/advertise.png
-#!date = 2024-11-13 17:18
+#!date = 2024-11-14 14：25
 
 
 [Rewrite]
@@ -29,6 +29,7 @@
 ^https:\/\/log\.mmstat\.com\/m\.gif reject-dict
 
 #>志愿汇开屏,弹窗,图标广告
+^https:\/\/apiipv6\.zyh365\.com\/api\/modulePage reject-dict
 ^http:\/\/ad\.lovefree\.cc\/getAd reject-dict
 ^https:\/\/s3plus\.meituan\.net\/v1 reject-dict
 
@@ -48,4 +49,4 @@ https:\/\/img-[a-z0-9]+\.didistatic\.com\/static\/[a-z0-9_]+\/[a-z0-9_]+\.jpg re
 ^https:\/\/yoyo\.qq\.com\/button reject-dict
 
 [Mitm]
-hostname = apps.eshiyun.info,img-ys011.didistatic.com,yoyo.qq.com,appdmkj.5idream.net,ad.lovefree.cc,s3plus.meituan.net,log.mmstat.com,img2.360buyimg.com,120.55.151.61:80,api.kmovie.gifshow.com,p3-sign.douyinpic.com,p2-lm.adukwai.com,api.ruubypay.com,staticsns.cdn.bcebos.com,image.5idream.net
+hostname = apps.eshiyun.info,img-ys011.didistatic.com,yoyo.qq.com,appdmkj.5idream.net,ad.lovefree.cc,s3plus.meituan.net,log.mmstat.com,img2.360buyimg.com,120.55.151.61:80,api.kmovie.gifshow.com,p3-sign.douyinpic.com,p2-lm.adukwai.com,api.ruubypay.com,staticsns.cdn.bcebos.com,image.5idream.net,apiipv6.zyh365.com
