@@ -1,74 +1,59 @@
-let body = JSON.parse($response.body);
+[Script]
+# 首页信息流
+http-response ^https:\/\/casper-agent\.hongyibo\.com\.cn\/agent\/v3\/feeds\? script-path=hxzfeeds.js, timeout=60, tag=首页信息流
 
-body.data.page_conf.lazy_load_components = body.data.page_conf.lazy_load_components.filter(component => component === "resource_position_list");
+# 导航栏
+http-response ^https:\/\/api\.hongyibo\.com\.cn\/gulfstream\/passenger-center\/v\d\/other\/pData\? script-path=hxz.js, timeout=60, tag=导航栏
 
-body.data.disorder_components = body.data.disorder_components.filter(component => component.name === "resource_position_list");
-
-$done({ body: JSON.stringify(body) });
-
-
+# 资源列表
+http-response ^https:\/\/api\.hongyibo\.com\.cn\/gulfstream\/passenger-center\/v1\/other\/pLayout\? script-path=hxzziyuan.js, timeout=60, tag=资源列表
 
 
-
-let body = JSON.parse($response.body);
-
-if (body.data && Array.isArray(body.data.components)) {
-  body.data.components.forEach(component => {
-    if (component.data && Array.isArray(component.data.king_kong_position_list)) {
-      // Filter and update king_kong_position_list in a single loop
-      component.data.king_kong_position_list = component.data.king_kong_position_list.reduce((result, item) => {
-        if (!["得5折券", "赚现金", "花花会员", "学生福利", "花花学生惠", "邀人享免单", "88元券包", "省钱中心", "借钱"].includes(item.title)) {
-          item.bubble_text = ''; // Set bubble_text to empty string
-          result.push(item); // Add item to result list
-        }
-        return result;
-      }, []);
-    }
-
-    // Check if template name needs to be removed
-    if (component.template && component.template.name) {
-      const namesToRemove = {
-        "weather": true,
-        "diversion_tab_list_template": true,
-        "running_order": true,
-        "destination_recommend_dest-normal_template": true,
-        "activity_cover_layer": true,
-        "register_driver-normal": true,
-        "new_marketing_bubble-normal_template": true,
-        "new_user_skin_v2": true,
-        "emotion_card_king_flower_sfc": true,
-        "homepage_pop_window": true
-      };
-      if (namesToRemove[component.template.name]) {
-        delete component.template.name;
-      }
-    }
-  });
-}
-
-$done({ body: JSON.stringify(body) });
+# 侧边栏
+http-response ^https:\/\/common\.hongyibo\.com\.cn\/usercenter\/kflowermenu script-path=hxzSidebar.js, timeout=60, tag=侧边栏
 
 
 
+# 支付界面套餐推荐
+http-response ^https:\/\/pay\.hongyibo\.com\.cn\/gulfstream\/pay\/v1\/client\/getPayInfo\? script-path=hxzPay.js, timeout=60, tag=支付界面套餐推荐
+http-response ^https:\/\/pay\.hongyibo\.com\.cn\/gulfstream\/pay\/v1\/client\/changePayInfo\? script-path=hxzPay.js, timeout=60, tag=支付界面套餐推荐
+
+# 打车界面
+http-response ^https:\/\/api\.hongyibo\.com\.cn\/gulfstream\/passenger\/v2\/core\/pMultiEstimatePrice\? script-path=hxzdache.js, timeout=60, tag=打车界面
+
+# 顺风车输入地址后界面
+http-response ^https:\/\/api\.hongyibo\.com\.cn\/gulfstream\/pre-sale\/v2\/core\/pMultiEstimatePrice\? script-path=hxzsfc.js, timeout=60, tag=顺风车输入地址后界面
+
+# 顺风车，代驾界面围巾
+http-response ^https:\/\/api\.hongyibo\.com\.cn\/gulfstream\/pre-sale\/v2\/core\/IndexInfo\? url reject-dict, tag=顺风车代驾界面围巾
+
+# 满意度调查
+http-response ^https:\/\/api\.hongyibo\.com\.cn\/gulfstream\/iapetos\/service\/pGetCommentData\? url reject-dict, tag=满意度调查
+
+# 花花会员中心底部轮播横幅
+http-response ^https:\/\/dop\.hongyibo\.com\.cn\/growth-member\/api\/user\/index\? script-path=hxzvip.js, timeout=60, tag=花花会员中心底部轮播横幅
+
+# 去除侧边框现金奖
+http-response ^https:\/\/common\.hongyibo\.com\.cn\/passenger\/discount\? script-path=hxzcard.js, timeout=60, tag=去除侧边框现金奖
 
 
-let body = JSON.parse($response.body);
 
-if (body.data) {
-  // Clear the goods_list entry
-  if (body.data.goods_list) {
-    body.data.goods_list = [];
-  }
+[Rewrite]
 
-  if (body.data.bill_detail && Array.isArray(body.data.bill_detail.external_channel_list)) {
-    
-   //body.data.bill_detail.external_channel_list = body.data.bill_detail.external_channel_list.filter(channel => channel.name !== "花小猪付");// 删除花小猪付
-    body.data.bill_detail.external_channel_list.forEach(channel => {
-      if (channel.sign_guide) {
-        delete channel.sign_guide.tips;
-      }
-    });
-  }
-}
+# 首页弹窗
+^https:\/\/res\.hongyibo\.com\.cn\/os\/gs\/resapi\/activity\/mget\? reject-dict
 
-$done({ body: JSON.stringify(body) });
+# 广告跟踪
+^https:\/\/adtrack\.hongyibo\.com\.cn\/trackx\? reject-dict
+
+# 屏蔽更新
+^https:\/\/conf\.hongyibo\.com\.cn\/api\/dynamicmodule\/update\? reject-dict
+
+# 首页安全中心提醒
+^https:\/\/sec-guard\.hongyibo\.com\.cn\/api\/guard\/psg\/v2\/getShieldStatus\? reject-dict
+
+
+
+[Mitm]
+hostname = 
+api.hongyibo.com.cn, res.hongyibo.com.cn, conf.hongyibo.com.cn, security.hongyibo.com.cn, common.hongyibo.com.cn, security.hongyibo.com.cn, sec-guard.hongyibo.com.cn, pay.hongyibo.com.cn, dop.hongyibo.com.cn
