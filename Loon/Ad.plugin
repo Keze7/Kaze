@@ -4,7 +4,7 @@
 #!author = kaze
 #!homepage = https://github.com/Keze7/Kaze/tree/main/Loon
 #!icon = https://raw.githubusercontent.com/Keze7/Kaze/refs/heads/main/icon/advertise.png
-#!date = 2024-11-14 15：02
+#!date = 2024-12-27 3:07
 
 
 [Rewrite]
@@ -30,7 +30,8 @@
 ^https:\/\/p3-sign\.douyinpic\.com\/tos-cn-p-0051 reject-dict
 ^https:\/\/p2-lm\.adukwai\.com\/bs2\/adUnionVideo reject-dict
 
-#>超级课程表更新弹窗
+#>超级课程表更新弹窗&净化
+^http:\/\/182\.92\.244\.70\/d reject-dict
 ^http:\/\/120\.55\.151\.61:80\/Base\/WindowConfig\/ reject-dict
 
 #>一刻相册开屏&净化
