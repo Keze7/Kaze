@@ -31,6 +31,7 @@
 ^https:\/\/p2-lm\.adukwai\.com\/bs2\/adUnionVideo reject-dict
 
 #>超级课程表更新弹窗&净化
+^http:\/\/qiniu-ad\.super\.cn reject-dict
 ^http:\/\/182\.92\.244\.70\/d reject-dict
 ^http:\/\/120\.55\.151\.61:80\/Base\/WindowConfig\/ reject-dict
 
@@ -62,4 +63,4 @@ https:\/\/img-[a-z0-9]+\.didistatic\.com\/static\/[a-z0-9_]+\/[a-z0-9_]+\.jpg re
 ^https:\/\/yoyo\.qq\.com\/button reject-dict
 
 [Mitm]
-hostname = apps.eshiyun.info,img-ys011.didistatic.com,yoyo.qq.com,appdmkj.5idream.net,ad.lovefree.cc,s3plus.meituan.net,log.mmstat.com,img2.360buyimg.com,120.55.151.61:80,api.kmovie.gifshow.com,p3-sign.douyinpic.com,p2-lm.adukwai.com,api.ruubypay.com,staticsns.cdn.bcebos.com,image.5idream.net,apiipv6.zyh365.com,sc.seeyouyima.com,ad.seeyouyima.com,api.bwton.com,images.pinduoduo.com
+hostname = apps.eshiyun.info,img-ys011.didistatic.com,yoyo.qq.com,appdmkj.5idream.net,ad.lovefree.cc,s3plus.meituan.net,log.mmstat.com,img2.360buyimg.com,120.55.151.61:80,api.kmovie.gifshow.com,p3-sign.douyinpic.com,p2-lm.adukwai.com,api.ruubypay.com,staticsns.cdn.bcebos.com,image.5idream.net,apiipv6.zyh365.com,sc.seeyouyima.com,ad.seeyouyima.com,api.bwton.com,images.pinduoduo.com,qiniu-ad.super.cn
