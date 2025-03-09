@@ -1,10 +1,10 @@
 #!name = 广告拦截&净化
-#!desc = 广告搞人心态
+#!desc = 针对部分APP广告进行拦截,某些APP要清除缓存或者重新安装拦截(仅自用)
 #!openUrl = 
 #!author = kaze
 #!homepage = https://github.com/Keze7/Kaze/tree/main/Loon
 #!icon = https://raw.githubusercontent.com/Keze7/Kaze/refs/heads/main/icon/advertise.png
-#!date = 2025-3-8 13:58
+#!date = 2025-3-9 20:51
 
 
 [Rewrite]
