@@ -1,0 +1,17 @@
+#!name = 花小猪去广告
+#!desc = 花小猪净化，去除弹窗，福利……
+#!openUrl = https://apps.apple.com/cn/app/id1496121983
+#!author = kaze
+#!homepage = https://github.com/Keze7/Kaze/tree/main/Loon
+#!icon = https://raw.githubusercontent.com/Keze7/Kaze/refs/heads/main/icon/3BA830AB-2E68-447F-A581-52F0A07C44C8.png
+#!date = 2025-3-14 23:00
+
+[Rule]
+DOMAIN,casper-agent.hongyibo.com.cn,REJECT
+
+[Rewrite]
+^https:\/\/s3-hnapuhdd-cdn\.didistatic\.com\/kf-biz-material reject-dict
+^https:\/\/casper-agent\.hongyibo\.com\.cn\/agent reject-dict
+
+[Mitm]
+hostname = s3-hnapuhdd-cdn.didistatic.com,157.255.70.30
