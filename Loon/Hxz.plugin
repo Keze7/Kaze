@@ -1,7 +1,7 @@
 #!name = 花小猪去广告
 #!desc = 花小猪净化，去除弹窗，福利……
 #!openUrl = https://apps.apple.com/cn/app/id1496121983
-#!author = kaze
+#!author = 辰
 #!homepage = https://github.com/Keze7/Kaze/tree/main/Loon
 #!icon = https://raw.githubusercontent.com/Keze7/Kaze/refs/heads/main/icon/3BA830AB-2E68-447F-A581-52F0A07C44C8.png
 #!date = 2025-3-21 15:12
@@ -13,9 +13,10 @@ DOMAIN,static.hongyibo.com.cn,REJECT
 
 [Rewrite]
 #花小猪广告流
+^https:\/\/common\.hongyibo\.com\.cn\/usercenter reject-dict
 ^https:\/\/static\.hongyibo\.com\.cn\/kf\-webx reject-dict
 ^https:\/\/s3-hnapuhdd-cdn\.didistatic\.com\/kf-biz-material reject-dict
 ^https:\/\/casper-agent\.hongyibo\.com\.cn\/agent reject-dict
 
 [Mitm]
-hostname = static.hongyibo.com.cn,s3-hnapuhdd-cdn.didistatic.com,157.255.70.30
+hostname = 2402:4e00:4040:8::1,static.hongyibo.com.cn,s3-hnapuhdd-cdn.didistatic.com,157.255.70.30
