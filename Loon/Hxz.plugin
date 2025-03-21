@@ -22,4 +22,4 @@ https:\/\/img-[a-z0-9]+\.didistatic\.com\/static\/[a-z0-9_]+\/[a-z0-9_]+\.jpg re
 ^https:\/\/casper-agent\.hongyibo\.com\.cn\/agent reject-dict
 
 [Mitm]
-hostname = 2402:4e00:4040:8::1,static.hongyibo.com.cn,s3-hnapuhdd-cdn.didistatic.com,157.255.70.30,img-ys011.didistatic.com
+hostname = 2402:4e00:4040:8::1,static.hongyibo.com.cn,s3-hnapuhdd-cdn.didistatic.com,157.255.70.30,img-ys011.didistatic.com,common.hongyibo.com.cn,casper-agent.hongyibo.com.cn
