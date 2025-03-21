@@ -17,7 +17,7 @@ https:\/\/img-[a-z0-9]+\.didistatic\.com\/static\/[a-z0-9_]+\/[a-z0-9_]+\.jpg re
 #花小猪左侧横幅广告
 ^https:\/\/common\.hongyibo\.com\.cn\/usercenter reject-dict
 #花小猪广告流
-^https:\/\/static\.hongyibo\.com\.cn\/kf\-webx reject-dict
+#^https:\/\/static\.hongyibo\.com\.cn\/kf\-webx reject-dict
 #^https:\/\/s3-hnapuhdd-cdn\.didistatic\.com\/kf-biz-material reject-dict
 ^https:\/\/casper-agent\.hongyibo\.com\.cn\/agent reject-dict
 
