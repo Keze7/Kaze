@@ -1,10 +1,10 @@
 #!name = 花小猪去广告
-#!desc = 花小猪净化，去除弹窗，福利……
+#!desc = 花小猪净化，去除弹窗，福利活动，左侧横幅……
 #!openUrl = https://apps.apple.com/cn/app/id1496121983
 #!author = 辰
 #!homepage = https://github.com/Keze7/Kaze/tree/main/Loon
 #!icon = https://raw.githubusercontent.com/Keze7/Kaze/refs/heads/main/icon/3BA830AB-2E68-447F-A581-52F0A07C44C8.png
-#!date = 2025-3-21 15:12
+#!date = 2025-3-21 18:50
 
 [Rule]
 #花小猪弹窗
@@ -13,7 +13,6 @@ DOMAIN,static.hongyibo.com.cn,REJECT
 
 [Rewrite]
 #花小猪开屏广告
-#>花小猪打车开屏广告页面里面有误杀
 https:\/\/img-[a-z0-9]+\.didistatic\.com\/static\/[a-z0-9_]+\/[a-z0-9_]+\.jpg reject-dict
 #花小猪左侧横幅广告
 ^https:\/\/common\.hongyibo\.com\.cn\/usercenter reject-dict
