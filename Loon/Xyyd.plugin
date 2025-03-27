@@ -5,10 +5,13 @@
 #!homepage = https://github.com/Keze7/Kaze/tree/main/Loon
 #!icon = https://raw.githubusercontent.com/Keze7/Kaze/refs/heads/main/icon/1C71E110-C86E-4916-8007-6786E08C4CD9.png
 #!date = 2025-3-27 22:48
+
 [Rewrite]
+
 #弹窗
 ^http:\/\/adx\-data\.yfanads\.com\/v1 reject-dict
 #图片
 ^http:\/\/swapp\-image\.gxapp\.iydsj\.com\/banner\-img reject-dict
+
 [Mitm]
 hostname = swapp-image.gxapp.iydsj.com,adx-data.yfanads.com
