@@ -8,8 +8,12 @@
 
 
 [Rewrite]
+#支付宝无人售货机广告
+^https:\/\/ilce\.alicdn\.com\/minolta reject-dict
+
 #学习通主页广告流
 ^https:\/\/home-yd\.chaoxing\.com\/apis\/data\/getAdsRecommend reject-dict
+
 #拉卡拉收款
 ^https:\/\/gmp\.lakala\.com\/gmp\/public reject-dict
 
@@ -61,4 +65,4 @@ https://appdmkj.5idream.net/v3/user/advertising/list reject-dict
 ^https:\/\/apps\.eshiyun\.info\/advertisement-consumer reject-dict
 
 [Mitm]
-hostname = apps.eshiyun.info,appdmkj.5idream.net,ad.lovefree.cc,s3plus.meituan.net,log.mmstat.com,img2.360buyimg.com,120.55.151.61:80,api.kmovie.gifshow.com,p3-sign.douyinpic.com,p2-lm.adukwai.com,api.ruubypay.com,staticsns.cdn.bcebos.com,image.5idream.net,apiipv6.zyh365.com,sc.seeyouyima.com,ad.seeyouyima.com,api.bwton.com,images.pinduoduo.com,qiniu-ad.super.cn,gmp.lakala.com,home-yd.chaoxing.com
+hostname = apps.eshiyun.info,appdmkj.5idream.net,ad.lovefree.cc,s3plus.meituan.net,log.mmstat.com,img2.360buyimg.com,120.55.151.61:80,api.kmovie.gifshow.com,p3-sign.douyinpic.com,p2-lm.adukwai.com,api.ruubypay.com,staticsns.cdn.bcebos.com,image.5idream.net,apiipv6.zyh365.com,sc.seeyouyima.com,ad.seeyouyima.com,api.bwton.com,images.pinduoduo.com,qiniu-ad.super.cn,gmp.lakala.com,home-yd.chaoxing.com,ilce.alicdn.com
