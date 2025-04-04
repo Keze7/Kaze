@@ -44,8 +44,8 @@
 ^http:\/\/120\.55\.151\.61:80\/Base\/WindowConfig\/ reject-dict
 
 #>一刻相册开屏&净化
-^https:\/\/img2\.360buyimg\.com\/tgx\/jfs\/t1 reject-dict
-^https:\/\/staticsns\.cdn\.bcebos\.com\/amis reject-dict
+#^https:\/\/img2\.360buyimg\.com\/tgx\/jfs\/t1 reject-dict
+#^https:\/\/staticsns\.cdn\.bcebos\.com\/amis reject-dict
 
 #>阿里云盘弹窗广告
 ^https:\/\/log\.mmstat\.com\/m\.gif reject-dict
