@@ -1,3 +1,11 @@
+#!name = 微信小程序去广告
+#!desc = 针对部分小程序广告进行拦(仅自用)
+#!openUrl = 
+#!author = kaze
+#!homepage = https://github.com/Keze7/Kaze/tree/main/Loon
+#!icon = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/WeixinMiniPrograms.png
+#!date = 2025-4-29 1:31
+
 [Rewrite]
 #同城旅行
 ^https:\/\/wx\.17u\.cn\/wxocbdapi\/adService reject-dict
