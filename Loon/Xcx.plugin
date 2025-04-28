@@ -1,0 +1,9 @@
+[Rewrite]
+#同城旅行
+^https:\/\/wx\.17u\.cn\/wxocbdapi\/adService reject-dict
+^https:\/\/wx\.17u\.cn\/wechatmypubapi\/myInfo\/listIcons reject-dict
+^https:\/\/wx\.17u\.cn\/platformpubapi\/card reject-dict
+^https:\/\/wx\.17u\.cn\/homemarketapi\/aggregator reject-dict
+
+[Mitm]
+hostname = wx.17u.cn
