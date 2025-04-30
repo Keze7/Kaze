@@ -7,11 +7,22 @@
 #!date = 2025-4-29 1:31
 
 [Rewrite]
-#同城旅行
+//同城旅行
 ^https:\/\/wx\.17u\.cn\/wxocbdapi\/adService reject-dict
 ^https:\/\/wx\.17u\.cn\/wechatmypubapi\/myInfo\/listIcons reject-dict
 ^https:\/\/wx\.17u\.cn\/platformpubapi\/card reject-dict
 ^https:\/\/wx\.17u\.cn\/homemarketapi\/aggregator reject-dict
+//美团
+^https:\/\/web\.meituan\.com\/api\/miniprogram\/my\/novelZone  reject-dict
+^https:\/\/web\.meituan\.com\/api\/miniprogram\/my\/resources  reject-dict
+^https:\/\/npay\.meituan\.com\/conch\/flow\/mypage-wallet-info  reject-dict
+^https:\/\/web\.meituan\.com\/newUser\/returnMoney\/popWindow  reject-dict
+^https:\/\/npay\.meituan\.com\/conch\/walletv3\/wechat-pop-window  reject-dict
+
+[Script]
+//美团
+http-response ^https:\/\/web\.meituan\.com\/api\/miniprogram\/tabbar\/all\/query script-path=https://raw.githubusercontent.com/Keze7/Kaze/refs/heads/main/Loon/mt.js, timeout=60, tag=美团去广告
+http-response ^https:\/\/web\.meituan\.com\/api\/miniprogram\/index\/aggregate script-path=https://raw.githubusercontent.com/Keze7/Kaze/refs/heads/main/Loon/mt.js, timeout=60, tag=美团去广告
 
 [Mitm]
-hostname = wx.17u.cn
+hostname = wx.17u.cn,web.meituan.com,npay.meituan.com
