@@ -4,7 +4,7 @@
 #!author = kaze
 #!homepage = https://github.com/Keze7/Kaze/tree/main/Loon
 #!icon = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/WeixinMiniPrograms.png
-#!date = 2025-4-29 1:31
+#!date = 2025-4-30 18:33
 
 [Rewrite]
 //同城旅行
@@ -13,11 +13,11 @@
 ^https:\/\/wx\.17u\.cn\/platformpubapi\/card reject-dict
 ^https:\/\/wx\.17u\.cn\/homemarketapi\/aggregator reject-dict
 //美团
-^https:\/\/web\.meituan\.com\/api\/miniprogram\/my\/novelZone  reject-dict
-^https:\/\/web\.meituan\.com\/api\/miniprogram\/my\/resources  reject-dict
-^https:\/\/npay\.meituan\.com\/conch\/flow\/mypage-wallet-info  reject-dict
-^https:\/\/web\.meituan\.com\/newUser\/returnMoney\/popWindow  reject-dict
-^https:\/\/npay\.meituan\.com\/conch\/walletv3\/wechat-pop-window  reject-dict
+^https:\/\/web\.meituan\.com\/api\/miniprogram\/my\/novelZone reject-dict
+^https:\/\/web\.meituan\.com\/api\/miniprogram\/my\/resources reject-dict
+^https:\/\/npay\.meituan\.com\/conch\/flow\/mypage-wallet-info reject-dict
+^https:\/\/web\.meituan\.com\/newUser\/returnMoney\/popWindow reject-dict
+^https:\/\/npay\.meituan\.com\/conch\/walletv3\/wechat-pop-window reject-dict
 
 [Script]
 //美团
