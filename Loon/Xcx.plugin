@@ -19,10 +19,5 @@
 ^https:\/\/web\.meituan\.com\/newUser\/returnMoney\/popWindow reject-dict
 ^https:\/\/npay\.meituan\.com\/conch\/walletv3\/wechat-pop-window reject-dict
 
-[Script]
-//美团
-http-response ^https:\/\/web\.meituan\.com\/api\/miniprogram\/tabbar\/all\/query script-path=https://raw.githubusercontent.com/Keze7/Kaze/refs/heads/main/Loon/mt.js, timeout=60, tag=美团去广告
-http-response ^https:\/\/web\.meituan\.com\/api\/miniprogram\/index\/aggregate script-path=https://raw.githubusercontent.com/Keze7/Kaze/refs/heads/main/Loon/mt.js, timeout=60, tag=美团去广告
-
 [Mitm]
 hostname = wx.17u.cn,web.meituan.com,npay.meituan.com
