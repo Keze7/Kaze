@@ -1,25 +1,25 @@
-#!name = 广告拦截&净化 (简洁版)
-#!desc = 针对部分APP广告进行拦截，支持按应用单独开关。某些APP需清除缓存或重装生效。
+#!name = 广告拦截&净化 (精确控制版)
+#!desc = 每个广告拦截规则均可独立开关，需手动开启对应选项才会生效
 #!author = kaze
 #!homepage = https://github.com/Keze7/Kaze/tree/main/Loon
 #!icon = https://raw.githubusercontent.com/Keze7/Kaze/refs/heads/main/icon/advertise.png
-#!date = 2025-4-13 15:38
+#!date = 2025-3-26 10:03
 
 [Argument]
-# 按应用独立开关
-alipay_enable = switch,true,false,tag=支付宝广告拦截,desc=拦截支付宝无人售货机广告
-chaoxing_enable = switch,true,false,tag=学习通广告拦截,desc=拦截学习通主页广告流
-lakala_enable = switch,true,false,tag=拉卡拉广告拦截,desc=拦截拉卡拉收款广告
-bus_enable = switch,true,false,tag=掌上公交净化,desc=净化掌上公交广告
-bwton_enable = switch,true,false,tag=石慧行广告拦截,desc=拦截石慧行应用广告
-meiyou_enable = switch,true,false,tag=美柚净化,desc=净化美柚应用广告
-yitongxing_enable = switch,true,false,tag=亿通行净化,desc=净化亿通行应用广告
-kuaiying_enable = switch,true,false,tag=快影广告拦截,desc=拦截快影开屏广告
-kecheng_enable = switch,true,false,tag=超级课程表净化,desc=拦截更新弹窗
-aliyun_enable = switch,true,false,tag=阿里云盘广告,desc=拦截弹窗广告
-zhiyuan_enable = switch,true,false,tag=志愿汇广告,desc=拦截开屏/弹窗广告
-dream_enable = switch,true,false,tag=到梦空间广告,desc=拦截各类页面广告
-tangshan_enable = switch,true,false,tag=幸福唐山广告,desc=拦截开屏广告
+# 按应用独立开关（默认全部关闭，需手动开启）
+alipay_enable = switch,"false","true",tag=支付宝广告拦截
+chaoxing_enable = switch,"false","true",tag=学习通广告拦截
+lakala_enable = switch,"false","true",tag=拉卡拉广告拦截
+bus_enable = switch,"false","true",tag=掌上公交净化
+bwton_enable = switch,"false","true",tag=石慧行广告拦截
+meiyou_enable = switch,"false","true",tag=美柚净化
+yitongxing_enable = switch,"false","true",tag=亿通行净化
+kuaiying_enable = switch,"false","true",tag=快影广告拦截
+kecheng_enable = switch,"false","true",tag=超级课程表净化
+aliyun_enable = switch,"false","true",tag=阿里云盘广告
+zhiyuan_enable = switch,"false","true",tag=志愿汇广告
+dream_enable = switch,"false","true",tag=到梦空间广告
+tangshan_enable = switch,"false","true",tag=幸福唐山广告
 
 [Rewrite]
 # 支付宝无人售货机广告
@@ -30,38 +30,45 @@ enable = alipay_enable
 ^https:\/\/home-yd\.chaoxing\.com\/apis\/data\/getAdsRecommend reject-dict
 enable = chaoxing_enable
 
-# 拉卡拉收款
+# 拉卡拉收款广告
 ^https:\/\/gmp\.lakala\.com\/gmp\/public reject-dict
 enable = lakala_enable
 
-# 掌上公交净化
+# 掌上公交净化（两条规则绑定同一开关）
 ^http:\/\/images\.pinduoduo\.com\/marketing_api reject-dict
+enable = bus_enable
 ^https:\/\/p2-lm\.adukwai\.com\/bs2\/adUnionVideo reject-dict
 enable = bus_enable
 
-# 石慧行
+# 石慧行广告拦截
 ^https:\/\/api\.bwton\.com\/bas\/ad reject-dict
+enable = bwton_enable
 ^https:\/\/api\.bwton\.com\/bas\/tweets\/v1 reject-dict
 enable = bwton_enable
 
 # 美柚净化
 ^https:\/\/sc\.seeyouyima\.com\/eimg\/adimg reject-dict
+enable = meiyou_enable
 ^https:\/\/ad\.seeyouyima\.com\/v1 reject-dict
 enable = meiyou_enable
 
 # 亿通行净化
 ^https:\/\/api\.ruubypay\.com\/Advert\/gain reject-dict
+enable = yitongxing_enable
 ^https:\/\/api\.ruubypay\.com\/appSide reject-dict
 enable = yitongxing_enable
 
-# 快影开屏
+# 快影开屏广告
 ^https:\/\/api\.kmovie\.gifshow\.com\/rest\/n\/kmovie\/app\/resource reject-dict
+enable = kuaiying_enable
 ^https:\/\/p3-sign\.douyinpic\.com\/tos-cn-p-0051 reject-dict
 enable = kuaiying_enable
 
-# 超级课程表更新弹窗&净化
+# 超级课程表净化
 ^http:\/\/qiniu-ad\.super\.cn reject-dict
+enable = kecheng_enable
 ^http:\/\/182\.92\.244\.70\/d reject-dict
+enable = kecheng_enable
 ^http:\/\/120\.55\.151\.61:80\/Base\/WindowConfig\/ reject-dict
 enable = kecheng_enable
 
@@ -71,14 +78,19 @@ enable = aliyun_enable
 
 # 志愿汇广告
 ^https:\/\/apiipv6\.zyh365\.com\/api\/modulePage reject-dict
+enable = zhiyuan_enable
 ^http:\/\/ad\.lovefree\.cc\/getAd reject-dict
+enable = zhiyuan_enable
 ^https:\/\/s3plus\.meituan\.net\/v1 reject-dict
 enable = zhiyuan_enable
 
 # 到梦空间广告
 ^http:\/\/image\.5idream\.net\/notification\/activity reject-dict
+enable = dream_enable
 ^https?:\/\/appdmkj\.5idream\.net\/v2\/login\/message\/tip reject-dict
+enable = dream_enable
 ^https:\/\/appdmkj\.5idream\.net\/v3\/user\/advertising\/list reject-dict
+enable = dream_enable
 ^https?:\/\/appdmkj\.5idream\.net\/appPic\/homepage reject-dict
 enable = dream_enable
 
