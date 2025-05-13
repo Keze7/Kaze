@@ -1,60 +1,55 @@
-#!name = 广告拦截&净化
-#!desc = 针对部分APP广告进行拦截，某些APP需清除缓存或重装生效 (仅自用)
-#!openUrl = 
+#!name = 广告拦截&净化（分类版）
+#!desc = 按APP分类拦截广告，部分需清除缓存或重装生效
 #!author = kaze
 #!homepage = https://github.com/Keze7/Kaze/tree/main/Loon
 #!icon = https://raw.githubusercontent.com/Keze7/Kaze/refs/heads/main/icon/advertise.png
-#!date = 2024-5-13 18:15
+#!date = 2025-05-13 19:17
 
 [Rewrite]
-# ========== 支付类 ==========
+
+### 📌 支付类 ###
 # 支付宝无人售货机广告
 ^https:\/\/ilce\.alicdn\.com\/minolta reject-dict
 
 # 拉卡拉收款广告
 ^https:\/\/gmp\.lakala\.com\/gmp\/public reject-dict
 
-# ========== 教育类 ==========
+
+### 📌 学习类 ###
 # 学习通主页广告流
 ^https:\/\/home-yd\.chaoxing\.com\/apis\/data\/getAdsRecommend reject-dict
 
-# 超级课程表更新弹窗&净化
-^http:\/\/qiniu-ad\.super\.cn reject-dict
-^http:\/\/182\.92\.244\.70\/d reject-dict
+# 超级课程表更新弹窗&广告
+^https?:\/\/qiniu-ad\.super\.cn reject-dict
+^https?:\/\/182\.92\.244\.70\/d reject-dict
 ^http:\/\/120\.55\.151\.61:80\/Base\/WindowConfig\/ reject-dict
 
-# 到梦空间广告
-^http:\/\/image\.5idream\.net\/notification\/activity reject-dict
-^https?:\/\/appdmkj\.5idream\.net\/v2\/login\/message\/tip reject-dict
-^https:\/\/appdmkj\.5idream\.net\/v3\/user\/advertising\/list reject-dict
-^https?:\/\/appdmkj\.5idream\.net\/appPic\/homepage reject-dict
+# 到梦空间（开屏/弹窗/主页广告）
+^https?:\/\/image\.5idream\.net\/notification\/activity reject-dict
+^https?:\/\/appdmkj\.5idream\.net\/(v2\/login\/message\/tip|v3\/user\/advertising\/list|appPic\/homepage) reject-dict
 
-# ========== 交通类 ==========
-# 亿通行广告
-^https:\/\/api\.ruubypay\.com\/Advert\/gain reject-dict
-^https:\/\/api\.ruubypay\.com\/appSide reject-dict
 
+### 📌 出行类 ###
 # 掌上公交广告
-^http:\/\/images\.pinduoduo\.com\/marketing_api reject-dict
+^https?:\/\/images\.pinduoduo\.com\/marketing_api reject-dict
 ^https:\/\/p2-lm\.adukwai\.com\/bs2\/adUnionVideo reject-dict
 
 # 石慧行广告
-^https:\/\/api\.bwton\.com\/bas\/ad reject-dict
-^https:\/\/api\.bwton\.com\/bas\/tweets\/v1 reject-dict
+^https:\/\/api\.bwton\.com\/(bas\/ad|bas\/tweets\/v1) reject-dict
 
-# ========== 生活类 ==========
+# 亿通行广告
+^https:\/\/api\.ruubypay\.com\/(Advert\/gain|appSide) reject-dict
+
+
+### 📌 生活类 ###
 # 美柚广告
 ^https:\/\/sc\.seeyouyima\.com\/eimg\/adimg reject-dict
 ^https:\/\/ad\.seeyouyima\.com\/v1 reject-dict
 
-# 快影开屏广告
-^https:\/\/api\.kmovie\.gifshow\.com\/rest\/n\/kmovie\/app\/resource reject-dict
-^https:\/\/p3-sign\.douyinpic\.com\/tos-cn-p-0051 reject-dict
-
 # 阿里云盘弹窗广告
 ^https:\/\/log\.mmstat\.com\/m\.gif reject-dict
 
-# 志愿汇广告
+# 志愿汇（开屏/弹窗/图标广告）
 ^https:\/\/apiipv6\.zyh365\.com\/api\/modulePage reject-dict
 ^http:\/\/ad\.lovefree\.cc\/getAd reject-dict
 ^https:\/\/s3plus\.meituan\.net\/v1 reject-dict
@@ -62,26 +57,11 @@
 # 幸福唐山开屏广告
 ^https:\/\/apps\.eshiyun\.info\/advertisement-consumer reject-dict
 
-[MITM]
-hostname = 
-    ilce.alicdn.com,
-    gmp.lakala.com,
-    home-yd.chaoxing.com,
-    qiniu-ad.super.cn,
-    182.92.244.70,
-    120.55.151.61,
-    image.5idream.net,
-    appdmkj.5idream.net,
-    api.ruubypay.com,
-    images.pinduoduo.com,
-    p2-lm.adukwai.com,
-    api.bwton.com,
-    sc.seeyouyima.com,
-    ad.seeyouyima.com,
-    api.kmovie.gifshow.com,
-    p3-sign.douyinpic.com,
-    log.mmstat.com,
-    apiipv6.zyh365.com,
-    ad.lovefree.cc,
-    s3plus.meituan.net,
-    apps.eshiyun.info
+
+### 📌 视频/工具类 ###
+# 快影开屏广告
+#^https:\/\/api\.kmovie\.gifshow\.com\/rest\/n\/kmovie\/app\/resource reject-dict
+#^https:\/\/p3-sign\.douyinpic\.com\/tos-cn-p-0051 reject-dict
+
+[Mitm]
+hostname = apps.eshiyun.info,appdmkj.5idream.net,ad.lovefree.cc,s3plus.meituan.net,log.mmstat.com,img2.360buyimg.com,120.55.151.61:80,api.kmovie.gifshow.com,p3-sign.douyinpic.com,p2-lm.adukwai.com,api.ruubypay.com,staticsns.cdn.bcebos.com,image.5idream.net,apiipv6.zyh365.com,sc.seeyouyima.com,ad.seeyouyima.com,api.bwton.com,images.pinduoduo.com,qiniu-ad.super.cn,gmp.lakala.com,home-yd.chaoxing.com,ilce.alicdn.com
