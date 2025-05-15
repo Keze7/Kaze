@@ -30,6 +30,11 @@
 
 
 ### 📌 出行类 ###
+
+# 花小猪开屏广告/AD
+^https:\/\/casper\-agent\.hongyibo\.com\.cn\/agent request-body-json-jq '.data.kf-pig-homev2.cards[] |= del(if .. | strings | any(test(\"ad_oss\")) then . else null end)'
+^https:\/\/res\-new\.hongyibo\.com\.cn\/resapi request-body-json-jq 'map(del(with_entries(select(.value | test(\".jpg$\") or contains(\"跳转\"))))'
+
 # 掌上公交广告
 ^https?:\/\/images\.pinduoduo\.com\/marketing_api reject-dict
 ^https:\/\/p2-lm\.adukwai\.com\/bs2\/adUnionVideo reject-dict
@@ -64,4 +69,4 @@
 #^https:\/\/p3-sign\.douyinpic\.com\/tos-cn-p-0051 reject-dict
 
 [Mitm]
-hostname = apps.eshiyun.info,appdmkj.5idream.net,ad.lovefree.cc,s3plus.meituan.net,log.mmstat.com,img2.360buyimg.com,120.55.151.61:80,api.kmovie.gifshow.com,p3-sign.douyinpic.com,p2-lm.adukwai.com,api.ruubypay.com,staticsns.cdn.bcebos.com,image.5idream.net,apiipv6.zyh365.com,sc.seeyouyima.com,ad.seeyouyima.com,api.bwton.com,images.pinduoduo.com,qiniu-ad.super.cn,gmp.lakala.com,home-yd.chaoxing.com,ilce.alicdn.com
+hostname = apps.eshiyun.info,appdmkj.5idream.net,ad.lovefree.cc,s3plus.meituan.net,log.mmstat.com,img2.360buyimg.com,120.55.151.61:80,api.kmovie.gifshow.com,p3-sign.douyinpic.com,p2-lm.adukwai.com,api.ruubypay.com,staticsns.cdn.bcebos.com,image.5idream.net,apiipv6.zyh365.com,sc.seeyouyima.com,ad.seeyouyima.com,api.bwton.com,images.pinduoduo.com,qiniu-ad.super.cn,gmp.lakala.com,home-yd.chaoxing.com,ilce.alicdn.com,casper-agent.hongyibo.com.cn,res-new.hongyibo.com.cn
