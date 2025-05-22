@@ -3,7 +3,7 @@
 #!author = kaze
 #!homepage = https://github.com/Keze7/Kaze/tree/main/Loon
 #!icon = https://raw.githubusercontent.com/Keze7/Kaze/refs/heads/main/icon/advertise.png
-#!date = 2025-05-19 1:15
+#!date = 2025-05-22 16:16
 
 [Rewrite]
 
@@ -50,6 +50,14 @@
 
 
 ### 📌 生活类 ###
+#中国联通
+^https:\/\/m\.client\.10010\.com\/mobileserviceNine\/api\/v1\/index reject-dict
+^https:\/\/m\.client\.10010\.com\/clientMyPage\/v1\/api\/myWallet reject-dict
+^https:\/\/m\.client\.10010\.com\/clientMyPage\/v1\/api\/getDeviceInfo reject-dict
+^https:\/\/m\.client\.10010\.com\/clientMyPage\/v1\/api\/myRecommend reject-dict
+^https:\/\/m\.client\.10010\.com\/servicetransactbusiness reject-dict
+^https:\/\/m\.client\.10010\.com\/clientIndex reject-dict
+
 # 美柚广告
 ^https:\/\/sc\.seeyouyima\.com\/eimg\/adimg reject-dict
 ^https:\/\/ad\.seeyouyima\.com\/v1 reject-dict
@@ -71,4 +79,4 @@
 ^https:\/\/api\.kmovie\.gifshow\.com\/rest\/n\/kmovie\/app\/resource reject-dict
 
 [Mitm]
-hostname = apps.eshiyun.info,appdmkj.5idream.net,ad.lovefree.cc,s3plus.meituan.net,log.mmstat.com,img2.360buyimg.com,120.55.151.61:80,api.kmovie.gifshow.com,p3-sign.douyinpic.com,p2-lm.adukwai.com,api.ruubypay.com,staticsns.cdn.bcebos.com,image.5idream.net,apiipv6.zyh365.com,sc.seeyouyima.com,ad.seeyouyima.com,api.bwton.com,images.pinduoduo.com,qiniu-ad.super.cn,gmp.lakala.com,home-yd.chaoxing.com,ilce.alicdn.com,img-ys011.didistatic.com,157.255.70.30,res-new.hongyibo.com.cn,common.hongyibo.com.cn,2402:4e00:4040:8::4,agent.hongyibo.com.cn,157.255.70.31,2402:4e00:4040:8::1
+hostname = apps.eshiyun.info,appdmkj.5idream.net,ad.lovefree.cc,s3plus.meituan.net,log.mmstat.com,img2.360buyimg.com,120.55.151.61:80,api.kmovie.gifshow.com,p3-sign.douyinpic.com,p2-lm.adukwai.com,api.ruubypay.com,staticsns.cdn.bcebos.com,image.5idream.net,apiipv6.zyh365.com,sc.seeyouyima.com,ad.seeyouyima.com,api.bwton.com,images.pinduoduo.com,qiniu-ad.super.cn,gmp.lakala.com,home-yd.chaoxing.com,ilce.alicdn.com,img-ys011.didistatic.com,157.255.70.30,res-new.hongyibo.com.cn,common.hongyibo.com.cn,2402:4e00:4040:8::4,agent.hongyibo.com.cn,157.255.70.31,2402:4e00:4040:8::1,m.client.10010.com
