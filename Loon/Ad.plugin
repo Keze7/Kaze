@@ -84,6 +84,7 @@
 ^https:\/\/api\.kmovie\.gifshow\.com\/rest\/n\/kmovie\/app\/resource reject-dict
 ^https:\/\/api\.kmovie\.gifshow\.com\/rest\/n\/kmovie\/app\/startup\/config\/getByType reject-dict
 ^https:\/\/api\.kmovie\.gifshow\.com\/rest\/n\/kmovie\/app\/ad reject-dict
+^https:\/\/api\.kmovie\.gifshow\.com\/rest\/n\/kmovie\/app\/banner\/common reject-dict
 
 [Mitm]
 hostname = apps.eshiyun.info,appdmkj.5idream.net,ad.lovefree.cc,s3plus.meituan.net,log.mmstat.com,img2.360buyimg.com,120.55.151.61:80,p3-sign.douyinpic.com,p2-lm.adukwai.com,api.ruubypay.com,staticsns.cdn.bcebos.com,image.5idream.net,apiipv6.zyh365.com,sc.seeyouyima.com,ad.seeyouyima.com,api.bwton.com,images.pinduoduo.com,qiniu-ad.super.cn,gmp.lakala.com,home-yd.chaoxing.com,ilce.alicdn.com,img-ys011.didistatic.com,157.255.70.30,res-new.hongyibo.com.cn,common.hongyibo.com.cn,2402:4e00:4040:8::4,agent.hongyibo.com.cn,157.255.70.31,2402:4e00:4040:8::1,m.client.10010.com,staticsns.cdn.bcebos.com,pan.baidu.com,api.kmovie.gifshow.com
