@@ -35,7 +35,7 @@
 ^https:\/\/common\.hongyibo\.com\.cn\/usercenter request-body-json-jq '.data |= ( .dynamic_menus |= map(select(.title != \"借钱\" and .title != \"学生福利\")) | del(.driver_activity) | .tools.item |= map(select(.name != \"借钱\" and .name != \"司机招募\")) )'
 ^https:\/\/casper\-agent\.hongyibo\.com\.cn\/agent\/v3\/feeds reject-dict
 ^https:\/\/common\.hongyibo\.com\.cn\/usercenter reject-dict
-^https:\/\/img\-ys011\.didistatic\.com\/static\/ad_oss reject-dict
+#^https:\/\/img\-ys011\.didistatic\.com\/static\/ad_oss reject-dict
 ^https:\/\/res\-new\.hongyibo\.com\.cn\/resapi reject-dict
 
 # 掌上公交广告
