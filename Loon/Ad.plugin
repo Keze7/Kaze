@@ -73,7 +73,6 @@
 # 志愿汇（开屏/弹窗/图标广告）
 ^https:\/\/apiipv6\.zyh365\.com\/api\/modulePage reject-dict
 ^http:\/\/ad\.lovefree\.cc\/getAd reject-dict
-^https:\/\/s3plus\.meituan\.net\/v1 reject-dict
 
 # 幸福唐山开屏广告
 ^https:\/\/apps\.eshiyun\.info\/advertisement-consumer reject-dict
