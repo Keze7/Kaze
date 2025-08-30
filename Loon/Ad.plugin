@@ -12,7 +12,7 @@
 ^https:\/\/ilce\.alicdn\.com\/minolta reject-dict
 
 # 拉卡拉收款广告
-^https:\/\/gmp\.lakala\.com\/gmp\/public reject-dict
+#^https:\/\/gmp\.lakala\.com\/gmp\/public reject-dict
 
 
 ### 📌 学习类 ###
