@@ -20,9 +20,9 @@
 ^https:\/\/home-yd\.chaoxing\.com\/apis\/data\/getAdsRecommend reject-dict
 
 # 超级课程表更新弹窗&广告
-^https?:\/\/qiniu-ad\.super\.cn reject-dict
-^https?:\/\/182\.92\.244\.70\/d reject-dict
-^http:\/\/120\.55\.151\.61:80\/Base\/WindowConfig\/ reject-dict
+#^https?:\/\/qiniu-ad\.super\.cn reject-dict
+#^https?:\/\/182\.92\.244\.70\/d reject-dict
+#^http:\/\/120\.55\.151\.61:80\/Base\/WindowConfig\/ reject-dict
 
 # 到梦空间（开屏/弹窗/主页广告）
 ^https?:\/\/image\.5idream\.net\/notification\/activity reject-dict
