@@ -68,8 +68,8 @@
 ^https:\/\/log\.mmstat\.com\/m\.gif reject-dict
 
 # 志愿汇（开屏/弹窗/图标广告）
-^https:\/\/apiipv6\.zyh365\.com\/api\/modulePage reject-dict
-^http:\/\/ad\.lovefree\.cc\/getAd reject-dict
+#^https:\/\/apiipv6\.zyh365\.com\/api\/modulePage reject-dict
+#^http:\/\/ad\.lovefree\.cc\/getAd reject-dict
 
 # 幸福唐山开屏广告
 ^https:\/\/apps\.eshiyun\.info\/advertisement-consumer reject-dict
